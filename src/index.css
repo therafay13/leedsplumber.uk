@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cheshire Spray — Industrial Charcoal & Ember */
+    --background: 240 6% 6%;          /* #0f0f10 deep charcoal */
+    --foreground: 0 0% 100%;
+
+    --card: 240 6% 96%;
+    --card-foreground: 240 6% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 10%;
+
+    --primary: 240 6% 11%;            /* #1c1c1f charcoal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 24%;          /* #3a3a3f mid charcoal */
+    --secondary-foreground: 0 0% 100%;
+
+    --tertiary: 14 78% 57%;           /* #e85d3a ember */
+    --tertiary-foreground: 0 0% 100%;
+
+    --muted: 240 4% 40%;
+    --muted-foreground: 240 4% 35%;
+
+    --accent: 16 100% 65%;            /* #ff7a4d bright ember */
+    --accent-foreground: 240 6% 6%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 85%;
+    --input: 240 6% 85%;
+    --ring: 14 78% 57%;
+
+    --radius: 0.5rem;
+
+    /* Custom Colors */
+    --grey: 240 4% 30%;
+    --text-grey: 240 4% 35%;
+    --white: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(240 6% 6%),
+      hsl(240 6% 18%)
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      hsl(var(--tertiary)),
+      hsl(16 100% 65%)
+    );
+
+    /* Shadows */
+    --shadow-card: 0 10px 40px -10px hsl(240 6% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--tertiary) / 0.45);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 14 78% 57%;
+  }
+
+  .dark {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 100%;
+    --card: 240 6% 9%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 6% 9%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 4% 24%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4% 40%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 16 100% 65%;
+    --accent-foreground: 240 6% 6%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 14 78% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-barlow antialiased;
+  }
+
+  h1 {
+    @apply font-clash text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply font-clash text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight;
+  }
+
+  h3 {
+    @apply font-clash text-2xl md:text-3xl lg:text-[34px] font-bold leading-snug tracking-tight;
+  }
+
+  h4 {
+    @apply font-clash text-xl md:text-2xl lg:text-[26px] font-semibold leading-snug;
+  }
+
+  h5 {
+    @apply font-clash text-lg md:text-xl font-semibold leading-snug;
+  }
+
+  h6 {
+    @apply font-clash text-base md:text-lg font-semibold;
+  }
+
+  p {
+    @apply text-lg leading-relaxed;
+  }
+
+  body {
+    font-family: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slideLeft 0.5s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideRight 0.5s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-[0_0_30px_hsl(78_100%_47%_/_0.3)];
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .animate-marquee-left {
+    animation-duration: 35s;
+  }
+  .animate-marquee-right {
+    animation-duration: 35s;
+  }
+}
+
+
