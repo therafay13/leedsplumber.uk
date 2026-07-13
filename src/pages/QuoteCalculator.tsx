@@ -219,7 +219,7 @@ const QuoteCalculator = () => {
               <AlertCircle className="mx-auto mb-5 h-10 w-10 text-tertiary" />
               <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">Need help right now?</h2>
               <p className="text-lg text-white/75">
-                For emergencies, call us directly. Leeds Plumber UK is available 24 hours a day, 365 days a year.
+                For emergencies, call us directly. We are available 24 hours a day, 365 days a year.
               </p>
             </div>
           </FadeIn>

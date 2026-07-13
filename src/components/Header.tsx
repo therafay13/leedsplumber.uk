@@ -7,7 +7,6 @@ const navLinks = [
   { name: "Home", href: "/", isRoute: true },
   { name: "About", href: "/about", isRoute: true },
   { name: "Service", href: "/services", isRoute: true },
-  { name: "Work", href: "/work", isRoute: true },
   { name: "Contact", href: "/contact", isRoute: true },
 ];
 const overflowLinks = [

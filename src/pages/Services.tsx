@@ -18,16 +18,19 @@ const Services = () => {
             <span className="text-primary">Services</span>
           </div>
 
-          <div className="mb-16 grid gap-8 lg:grid-cols-2">
+          <div className="mb-16 max-w-4xl">
             <FadeIn>
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">Our services</p>
               <h1 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
                 Plumbing <span className="text-tertiary">services</span>
               </h1>
             </FadeIn>
             <FadeIn delay={100}>
-              <p className="text-lg text-muted-foreground lg:pt-4">
-                Emergency plumbing, repairs, drainage, bathrooms, radiators, showers and water systems for homes and businesses across Leeds.
-              </p>
+              <div className="mt-6 max-w-2xl border-l-2 border-tertiary pl-5">
+                <p className="text-lg text-muted-foreground">
+                  We provide emergency plumbing, repairs, drainage, bathrooms, radiators, showers and water-system support for homes and businesses across Leeds.
+                </p>
+              </div>
             </FadeIn>
           </div>
 

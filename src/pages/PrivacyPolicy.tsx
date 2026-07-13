@@ -39,10 +39,10 @@ const PrivacyPolicy = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    John McGinty Plumbing Services, trading as Leeds Plumber UK, is a plumbing and drainage business based at 51 Whinmoor Crescent, Leeds, LS14 1NJ. We operate across Leeds, providing emergency plumbing, repairs, drainage, bathrooms, radiators, showers, pumps, and related services. This privacy policy explains how we collect, use, and protect your personal information when you use this website or contact us for a quote.
+                    John McGinty Plumbing Services, trading as LeedsPlumber.Uk, is a plumbing and drainage business based at 51 Whinmoor Crescent, Leeds, LS14 1NJ. We operate across Leeds, providing emergency plumbing, repairs, drainage, bathrooms, radiators, showers, pumps, and related services. This privacy policy explains how we collect, use, and protect your personal information when you use this website or contact us for a quote.
                   </p>
                   <p>
-                    If you have any questions about this policy, contact Leeds Plumber UK by calling 0113 418 2075.
+                    If you have any questions about this policy, contact LeedsPlumber.Uk by calling 0113 418 2075.
                   </p>
                 </div>
               </div>

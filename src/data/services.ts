@@ -27,7 +27,7 @@ export const services: Service[] = [
     description:
       "A fast, practical response for burst pipes, flooding, loss of water and urgent faults across Leeds.",
     aboutDescription:
-      "When water is escaping or a vital fitting has failed, the first priority is to make the situation safe and limit further damage. Leeds Plumber UK provides emergency plumbing support for homes and businesses, with clear advice on the phone and a direct route to the right next step.",
+      "When water is escaping or a vital fitting has failed, our first priority is to make the situation safe and limit further damage. We provide emergency plumbing support for homes and businesses, with clear advice on the phone and a direct route to the right next step.",
     included: [
       "Initial advice to help you isolate water and reduce damage",
       "Assessment of the fault and the safest repair approach",
@@ -217,17 +217,6 @@ export const services: Service[] = [
   },
 ];
 
-const legacyServiceAliases: Record<string, string> = {
-  "kitchen-resprays": "emergency-plumbing",
-  "upvc-windows-doors": "plumbing-repairs",
-  "fascias-soffits-downpipes": "leaks-burst-pipes",
-  "garage-door-respray": "drainage-jetting",
-  "wardrobes-interior-coatings": "bathrooms-taps-toilets",
-  "shop-fronts-commercial": "radiators-showers-pumps",
-  "industrial-protective-coatings": "saniflo-water-systems",
-};
-
 export const getServiceBySlug = (slug: string): Service | undefined => {
-  const canonicalSlug = legacyServiceAliases[slug] ?? slug;
-  return services.find((service) => service.slug === canonicalSlug);
+  return services.find((service) => service.slug === slug);
 };

@@ -17,18 +17,18 @@ const proofFacts = [
 
 const standards = [
   {
-    title: "Answer clearly",
-    description: "You should know who you are speaking to, what can happen next and how urgent the situation really is.",
+    title: "We answer clearly",
+    description: "We tell you who you are speaking to, what can happen next and how urgent the situation really is.",
     icon: Wrench,
   },
   {
-    title: "Work carefully",
-    description: "The property, the people in it and the surrounding finishes deserve attention throughout the job.",
+    title: "We work carefully",
+    description: "We protect the property, the people in it and the surrounding finishes throughout the job.",
     icon: ShieldCheck,
   },
   {
-    title: "Leave a proper handover",
-    description: "The repair is tested, the area is left tidy and the next step is explained in plain language.",
+    title: "We leave a proper handover",
+    description: "We test the repair, leave the area tidy and explain the next step in plain language.",
     icon: Clock3,
   },
 ];
@@ -61,22 +61,24 @@ const About = () => {
               <span className="text-primary">About</span>
             </div>
 
-            <div className="mb-12 grid items-end gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)]">
+            <div className="mb-12 max-w-4xl">
               <FadeIn>
                 <h1 className="max-w-4xl text-4xl font-bold leading-tight text-black md:text-5xl lg:text-6xl">
                   A plumber who makes the next step clear<span className="text-tertiary">.</span>
                 </h1>
               </FadeIn>
               <FadeIn delay={100}>
-                <p className="max-w-xl text-black">
-                  Leeds Plumber UK is a local repair and emergency plumbing service for homes and businesses across Leeds. Practical help, clear communication and a tidy finish.
-                </p>
+                <div className="mt-6 max-w-2xl border-l-2 border-tertiary pl-5">
+                  <p className="text-black">
+                    We provide local repair and emergency plumbing for homes and businesses across Leeds. We keep the advice practical, the communication clear and the finish tidy.
+                  </p>
+                </div>
               </FadeIn>
             </div>
 
             <FadeIn delay={200}>
               <div className="overflow-hidden rounded-3xl">
-                <img src={aboutHero} alt="Leeds Plumber UK service team at work" className="h-[400px] w-full object-cover lg:h-[500px]" />
+                <img src={aboutHero} alt="LeedsPlumber.Uk service team at work" className="h-[400px] w-full object-cover lg:h-[500px]" />
               </div>
             </FadeIn>
 
@@ -99,19 +101,19 @@ const About = () => {
               <FadeIn>
                 <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">The standard</p>
                 <h2 className="mb-6 text-primary">The service should feel as considered as the repair</h2>
-                <p className="text-muted-foreground">A good local service is not only about getting to the property. It is about making a difficult moment easier to understand and leaving the work in a better state.</p>
+                <p className="text-muted-foreground">We do more than get to the property. We make a difficult moment easier to understand and leave the work in a better state.</p>
               </FadeIn>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
               {standards.map((standard, index) => (
                 <FadeIn key={standard.title} delay={index * 100}>
-                  <article className={`h-full rounded-2xl p-8 ${index === 0 ? "bg-primary text-white md:col-span-2" : "border border-border bg-white"}`}>
-                    <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-full ${index === 0 ? "bg-white/10" : "bg-primary"}`}>
-                      <standard.icon className={`h-6 w-6 ${index === 0 ? "text-tertiary" : "text-white"}`} />
+                  <article className={`group h-full rounded-2xl border border-border bg-white p-8 transition-colors duration-300 hover:bg-primary ${index === 0 ? "md:col-span-2" : ""}`}>
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary transition-colors duration-300 group-hover:bg-white/10">
+                      <standard.icon className="h-6 w-6 text-white transition-colors duration-300 group-hover:text-tertiary" />
                     </div>
-                    <h3 className={`mb-3 text-2xl font-bold ${index === 0 ? "text-white" : "text-primary"}`}>{standard.title}</h3>
-                    <p className={index === 0 ? "text-white/75" : "text-muted-foreground"}>{standard.description}</p>
+                    <h3 className="mb-3 text-2xl font-bold text-primary transition-colors duration-300 group-hover:text-white">{standard.title}</h3>
+                    <p className="text-muted-foreground transition-colors duration-300 group-hover:text-white/75">{standard.description}</p>
                   </article>
                 </FadeIn>
               ))}
@@ -157,7 +159,7 @@ const About = () => {
               <FadeIn delay={100}>
                 <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">Local coverage</p>
                 <h2 className="mb-6 text-black">Plumbing support across Leeds</h2>
-                <p className="mb-8 font-medium leading-relaxed text-muted-foreground">From Headingley to Rothwell and Bramhope to Beeston, Leeds Plumber UK serves homes and businesses across the city. If you are unsure whether your area is covered, call and ask.</p>
+                <p className="mb-8 font-medium leading-relaxed text-muted-foreground">From Headingley to Rothwell and Bramhope to Beeston, we serve homes and businesses across the city. If you are unsure whether your area is covered, call and ask.</p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-muted-foreground md:grid-cols-4">
                   {coverageGroups.map((group) => (
                     <ul key={group[0]} className="space-y-2">
@@ -176,7 +178,7 @@ const About = () => {
               <FadeIn>
                 <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">The promise</p>
                 <h2 className="mb-6 text-primary">A useful answer is part of the job</h2>
-                <p className="mb-8 font-semibold leading-relaxed text-muted-foreground">Whether the answer is an emergency repair, a planned quote or honest advice about what needs specialist attention, the goal is to leave you better informed than when you called.</p>
+                <p className="mb-8 font-semibold leading-relaxed text-muted-foreground">Whether you need an emergency repair, a planned quote or honest advice about specialist attention, we aim to leave you better informed than when you called.</p>
                 <ul className="space-y-4">
                   {["24 hours a day, 365 days a year for emergencies", "No call-out charge, with charges from arrival", "Free quotes for planned plumbing work"].map((item) => (
                     <li key={item} className="flex items-start gap-3">

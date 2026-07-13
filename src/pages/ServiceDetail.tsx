@@ -193,8 +193,8 @@ const ServiceDetail = () => {
                     {service.workSteps.map((step, index) => (
                       <FadeIn key={index} delay={index * 100}>
                         <div className="flex flex-col gap-4">
-                          <div className="w-14 h-14 rounded-full border border-secondary flex items-center justify-center flex-shrink-0">
-                            <span className="text-secondary font-bold">{String(index + 1).padStart(2, "0")}</span>
+                          <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border-2 border-tertiary bg-tertiary">
+                            <span className="font-bold text-white">{String(index + 1).padStart(2, "0")}</span>
                           </div>
                           <div>
                             <h5 className="text-2xl font-bold text-black mb-2">{step.title}</h5>

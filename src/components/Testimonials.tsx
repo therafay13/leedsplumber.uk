@@ -4,23 +4,23 @@ import { Quote, Star } from "lucide-react";
 const feedbackThemes = [
   {
     title: "Responsive when it matters",
-    text: "Public feedback repeatedly highlights quick replies and prompt attendance when a plumbing problem cannot wait.",
+    text: "We respond quickly and aim to attend promptly when a plumbing problem cannot wait.",
   },
   {
     title: "Clear and fair",
-    text: "Customers value straightforward explanations, reasonable pricing and knowing what the work involves before it starts.",
+    text: "We explain what we find, what the work involves and what it should cost before we begin.",
   },
   {
     title: "Tidy by nature",
-    text: "Careful work and a clean handover are recurring reasons people recommend the service to friends and family.",
+    text: "We protect the property, work carefully and leave a clean handover that feels properly finished.",
   },
   {
     title: "Problems solved properly",
-    text: "Review themes include reliable repairs, useful advice and a willingness to help with smaller faults as well as emergencies.",
+    text: "We take time to solve the fault properly, with useful advice for smaller faults as well as emergencies.",
   },
   {
     title: "A local service people reuse",
-    text: "Repeat custom and personal recommendations point to a service built on trust rather than a hard sell.",
+    text: "We build repeat custom through dependable work, clear advice and a service worth recommending.",
   },
 ];
 
@@ -36,12 +36,11 @@ const FeedbackCard = ({ title, text }: (typeof feedbackThemes)[number]) => (
     </div>
     <h3 className="mb-3 text-xl font-bold text-primary">{title}</h3>
     <p className="flex-grow text-sm leading-relaxed text-muted-foreground">{text}</p>
-    <p className="mt-4 border-t border-gray-100 pt-4 text-sm font-semibold text-secondary">Public review theme</p>
   </article>
 );
 
 const Testimonials = () => {
-  const duplicatedThemes = [...feedbackThemes, ...feedbackThemes];
+  const duplicatedThemes = [...feedbackThemes, ...feedbackThemes, ...feedbackThemes];
 
   return (
     <section className="overflow-hidden bg-primary py-20 lg:py-32">
@@ -59,17 +58,24 @@ const Testimonials = () => {
           </div>
           <FadeIn delay={200}>
             <p className="mt-6 max-w-xl text-white lg:mt-0">
-              Public feedback consistently mentions quick attendance, clear explanations, fair prices, tidy work and repeat use.
+              When you call us, we keep the next step simple. We respond quickly, explain the work clearly and leave your home or premises tidy.
             </p>
           </FadeIn>
         </div>
       </div>
 
       <FadeIn delay={300}>
-        <div className="relative">
+        <div className="relative mb-4">
           <div className="flex w-max gap-4 animate-marquee-left">
             {duplicatedThemes.map((theme, index) => (
               <FeedbackCard key={`${theme.title}-${index}`} {...theme} />
+            ))}
+          </div>
+        </div>
+        <div className="relative hidden md:block">
+          <div className="flex w-max gap-4 animate-marquee-right">
+            {duplicatedThemes.map((theme, index) => (
+              <FeedbackCard key={`reverse-${theme.title}-${index}`} {...theme} />
             ))}
           </div>
         </div>

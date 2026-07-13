@@ -44,7 +44,7 @@ const About = () => {
               <div className="overflow-hidden rounded-3xl">
                 <img
                   src={plumberTeam}
-                  alt="Leeds Plumber UK service team at work"
+                  alt="LeedsPlumber.Uk service team at work"
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -65,7 +65,7 @@ const About = () => {
             </FadeIn>
             <FadeIn delay={200}>
               <p className="mb-8 font-semibold leading-relaxed text-muted-foreground">
-                John McGinty Plumbing Services, trading as Leeds Plumber UK, provides emergency plumbing, repairs and drainage support across Leeds. The aim is simple: answer when you need help, make the problem understandable, and carry out the right work without fuss.
+                We provide emergency plumbing, repairs and drainage support across Leeds. The aim is simple: answer when you need help, make the problem understandable, and carry out the right work without fuss.
               </p>
             </FadeIn>
 

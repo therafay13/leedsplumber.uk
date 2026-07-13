@@ -65,7 +65,7 @@ const CTA = () => {
               </div>
               {/* Text */}
               <p className="text-white font-semibold text-xl leading-relaxed mb-8">
-                Speak directly with Leeds Plumber UK about an emergency repair, drainage issue, or planned plumbing work.
+                Speak directly with LeedsPlumber.Uk about an emergency repair, drainage issue, or planned plumbing work.
               </p>
               {/* Button */}
               <a href="tel:+441134182075">

@@ -13,8 +13,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import QuoteCalculator from "./pages/QuoteCalculator";
 import ServiceDetail from "./pages/ServiceDetail";
 import Services from "./pages/Services";
-import Work from "./pages/Work";
-import WorkDetail from "./pages/WorkDetail";
 
 // Create QueryClient outside component to prevent recreation on every render
 const queryClient = new QueryClient({
@@ -43,8 +41,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/work/:slug" element={<WorkDetail />} />
           <Route path="/quote" element={<QuoteCalculator />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

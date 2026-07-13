@@ -49,7 +49,7 @@ const Experience = () => {
 
             <FadeIn delay={300}>
               <p className="mb-8 max-w-xl text-muted-foreground">
-                Leeds Plumber UK is built around the jobs that cannot wait and the repairs that should not be overcomplicated. We answer clearly, arrive prepared, and explain the work before it begins.
+                We are built around the jobs that cannot wait and the repairs that should not be overcomplicated. We answer clearly, arrive prepared, and explain the work before it begins.
               </p>
             </FadeIn>
 
@@ -70,7 +70,7 @@ const Experience = () => {
                 to="/about"
                 className="inline-flex items-center rounded-full border border-primary bg-white px-8 py-4 font-semibold text-primary transition-transform duration-300 hover:-translate-y-1"
               >
-                About Leeds Plumber UK
+                About LeedsPlumber.Uk
               </Link>
             </FadeIn>
           </div>

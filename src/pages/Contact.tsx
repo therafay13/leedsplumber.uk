@@ -97,21 +97,23 @@ const Contact = () => {
       <Header />
 
       <section className="px-4 pb-16 pt-32">
-        <div className="container-custom mx-auto text-center">
+        <div className="container-custom mx-auto max-w-4xl">
           <FadeIn>
-            <div className="mb-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
               <Link to="/" className="transition-colors hover:text-primary">Home</Link>
               <span>/</span>
               <span className="text-primary">Contact</span>
             </div>
-            <h1 className="mb-6 text-4xl font-bold text-black md:text-5xl lg:text-6xl">
-              {quoteData ? "Request a plumbing quote" : "Contact Leeds Plumber UK"}
+            <h1 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
+              {quoteData ? "Request a plumbing quote" : "Contact LeedsPlumber.Uk"}
             </h1>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              {quoteData
-                ? "Tell us what you need and we will arrange a clear quote. There is no call-out charge."
-                : "Call 0113 418 2075 for emergency help or send the details of planned plumbing work."}
-            </p>
+            <div className="mt-6 max-w-2xl border-l-2 border-tertiary pl-5">
+              <p className="text-muted-foreground">
+                {quoteData
+                  ? "Tell us what you need and we will arrange a clear quote. There is no call-out charge."
+                  : "Call 0113 418 2075 for emergency help or send us the details of planned plumbing work."}
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
