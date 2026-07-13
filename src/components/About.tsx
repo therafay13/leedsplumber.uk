@@ -44,7 +44,7 @@ const About = () => {
               <div className="overflow-hidden rounded-3xl">
                 <img
                   src={plumberTeam}
-                  alt="LeedsPlumber.Uk service team at work"
+                  alt="Leedsplumber.uk service team at work"
                   className="h-auto w-full object-cover"
                 />
               </div>

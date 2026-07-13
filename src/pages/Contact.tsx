@@ -105,7 +105,7 @@ const Contact = () => {
               <span className="text-primary">Contact</span>
             </div>
             <h1 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
-              {quoteData ? "Request a plumbing quote" : "Contact LeedsPlumber.Uk"}
+              {quoteData ? "Request a plumbing quote" : "Contact Leedsplumber.uk"}
             </h1>
             <div className="mt-6 max-w-2xl border-l-2 border-tertiary pl-5">
               <p className="text-muted-foreground">

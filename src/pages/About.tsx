@@ -78,7 +78,7 @@ const About = () => {
 
             <FadeIn delay={200}>
               <div className="overflow-hidden rounded-3xl">
-                <img src={aboutHero} alt="LeedsPlumber.Uk service team at work" className="h-[400px] w-full object-cover lg:h-[500px]" />
+                <img src={aboutHero} alt="Leedsplumber.uk service team at work" className="h-[400px] w-full object-cover lg:h-[500px]" />
               </div>
             </FadeIn>
 

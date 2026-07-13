@@ -70,7 +70,7 @@ const Experience = () => {
                 to="/about"
                 className="inline-flex items-center rounded-full border border-primary bg-white px-8 py-4 font-semibold text-primary transition-transform duration-300 hover:-translate-y-1"
               >
-                About LeedsPlumber.Uk
+                About Leedsplumber.uk
               </Link>
             </FadeIn>
           </div>

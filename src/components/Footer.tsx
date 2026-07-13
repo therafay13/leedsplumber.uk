@@ -105,7 +105,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-white/50">
-              © {new Date().getFullYear()} LeedsPlumber.Uk, trading name of John McGinty Plumbing Services.
+              © {new Date().getFullYear()} Leedsplumber.uk, trading name of John McGinty Plumbing Services.
             </p>
             <div className="flex gap-6">
               {footerLinks.resources.map((link) => (
