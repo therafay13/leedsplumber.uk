@@ -67,7 +67,10 @@ const Hero = () => {
             <h1 className="text-white font-bold mb-6 text-5xl md:text-6xl lg:text-7xl leading-[1.1] max-w-[800px] text-left xl:text-7xl">
               Emergency Plumbing
               <br />
-              <span className="text-tertiary">Across Leeds</span>
+              <span className="relative inline-block text-white">
+                Across Leeds
+                <span aria-hidden="true" className="absolute left-0 right-[42%] -bottom-1 h-1 rounded-full bg-tertiary" />
+              </span>
             </h1>
           </div>
 
@@ -115,7 +118,7 @@ const Hero = () => {
         {/* Right Side - Image Grid with Marquee */}
         <div style={{
           width: '432px'
-        }} className="hidden lg:flex gap-7 items-start justify-end absolute right-0 top-0 bottom-0 overflow-hidden z-0">
+        }} className="hidden lg:flex gap-7 items-start justify-end absolute right-[10%] top-0 bottom-0 overflow-hidden z-0">
           {/* Left Column - slides down continuously */}
           <div className="flex flex-col animate-marquee-down">
             {[...leftColumnImages, ...leftColumnImages, ...leftColumnImages].map((image, index) => <div key={index} className="overflow-hidden flex-shrink-0 pb-4">

@@ -18,12 +18,11 @@ export default {
   		}
   	},
   	extend: {
-  		fontFamily: {
-  			clash: [
-  				'Barlow Condensed',
-  				'Impact',
-  				'sans-serif'
-  			],
+		fontFamily: {
+				clash: [
+					'Barlow',
+					'sans-serif'
+				],
   			bebas: [
   				'Bebas Neue',
   				'Impact',

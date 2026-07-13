@@ -109,26 +109,38 @@
 
   h1 {
     @apply font-clash text-4xl md:text-5xl lg:text-[56px] font-bold leading-tight tracking-tight;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 
   h2 {
     @apply font-clash text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 
   h3 {
     @apply font-clash text-2xl md:text-3xl lg:text-[34px] font-bold leading-snug tracking-tight;
+    letter-spacing: -0.008em;
+    text-wrap: balance;
   }
 
   h4 {
     @apply font-clash text-xl md:text-2xl lg:text-[26px] font-semibold leading-snug;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
   }
 
   h5 {
     @apply font-clash text-lg md:text-xl font-semibold leading-snug;
+    letter-spacing: -0.004em;
+    text-wrap: balance;
   }
 
   h6 {
     @apply font-clash text-base md:text-lg font-semibold;
+    letter-spacing: -0.003em;
+    text-wrap: balance;
   }
 
   p {
@@ -150,7 +162,7 @@
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-[1600px] mx-auto;
   }
 }
 
