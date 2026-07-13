@@ -4,92 +4,98 @@ import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone } from "lucide-react";
 
-const FlipButton = ({
-  children
-}: {
-  children: React.ReactNode;
-}) => {
-  return <Button variant="default" size="default" className="group relative overflow-hidden border border-primary text-white hover:text-primary">
-    <span className="flex items-center gap-2 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-      <Phone className="h-4 w-4" />
-      {children}
-    </span>
-    <span className="absolute text-white inset-0 flex items-center justify-center gap-2 transition-all duration-300 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 bg-primary">
-      <Phone className="h-4 w-4" />
-      {children}
-    </span>
-  </Button>;
+const FlipButton = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Button variant="default" size="default" className="group relative overflow-hidden border border-primary text-white hover:text-primary">
+      <span className="flex items-center gap-2 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+        <Phone className="h-4 w-4" />
+        {children}
+      </span>
+      <span className="absolute inset-0 flex items-center justify-center gap-2 bg-primary text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+        <Phone className="h-4 w-4" />
+        {children}
+      </span>
+    </Button>
+  );
 };
 
-const features = [{
-  title: "Tidy Workspace Ethos",
-  description: "Dust sheets, masking and overspray containment — your home or premises left as clean as we found them."
-}, {
-  title: "Factory-Grade Finishes",
-  description: "Two-pack, water-based and solvent-based systems matched to each surface for a finish that lasts."
-}, {
-  title: "Any RAL Colour",
-  description: "Bring us a colour code, sample or Pinterest board — we'll match it and spray it."
-}];
-const About = () => {
-  return <section id="about" className="py-20 lg:pb-40 relative bg-card">
-    <div className="container-custom section-padding">
-      <div className="grid lg:grid-cols-2 gap-28 items-start">
-        {/* Right - Content */}
-        <div className="order-2 lg:order-1">
-          <FadeIn delay={100}>
-            <p className="text-tertiary mb-4 font-bold uppercase tracking-widest text-sm">Why Choose Us</p>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <h2 className="text-primary mb-6 text-5xl">
-              Spray Solutions For Every Surface
-            </h2>
-          </FadeIn>
-          <FadeIn delay={300}>
-            <p className="text-muted-foreground mb-8 font-semibold">
-              From a single garage door to a full commercial respray, we deliver a hand-finished workshop-quality result with twenty-five years of craftsmanship behind every coat.
-            </p>
-          </FadeIn>
+const features = [
+  {
+    title: "Fast response when it matters",
+    description: "Emergency plumbing support is available 24 hours a day, 365 days a year.",
+  },
+  {
+    title: "Straight answers",
+    description: "You receive a clear explanation of the fault, the options and the work agreed.",
+  },
+  {
+    title: "Careful, tidy work",
+    description: "We protect the space around the job and leave the area ready to use again.",
+  },
+];
 
-          {/* Features */}
-          <div className="space-y-6 mb-8 text-white">
-            {features.map((feature, index) => <FadeIn key={index} delay={400 + index * 100}>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <CheckCircle className="w-6 h-6 text-secondary stroke-white border rounded-full bg-primary" />
-                </div>
-                <div>
-                  <h6 className="text-primary text-2xl mb-1 font-bold">{feature.title}</h6>
-                  <p className="text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </FadeIn>)}
-          </div>
-
-
-          <a href="tel:+441134182075">
-            <FadeIn delay={600}>
-              <FlipButton>Call 0113 418 2075</FlipButton>
+const Solutions = () => {
+  return (
+    <section className="relative bg-card py-20 lg:pb-40">
+      <div className="container-custom section-padding">
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-28">
+          <div className="order-2 lg:order-1 lg:pt-8">
+            <FadeIn delay={100}>
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">Why choose us</p>
+              <h2 className="mb-6 text-primary">Good plumbing starts with a clear plan</h2>
             </FadeIn>
-          </a>
-        </div>
-        {/* Left - Image */}
-        <FadeIn className="order-1 lg:order-2 h-[90%]">
-          <div className="relative lg:h-full">
-            <div className="rounded-3xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-full">
-              <img src={heroPlumber} alt="Spray painter at work on uPVC window" className="h-auto w-full object-cover" />
+            <FadeIn delay={200}>
+              <p className="mb-8 font-semibold leading-relaxed text-muted-foreground">
+                From a blocked drain to a planned bathroom repair, we bring the same calm approach to every call. The work should solve the problem and make sense to the person paying for it.
+              </p>
+            </FadeIn>
+
+            <div className="mb-8 space-y-6">
+              {features.map((feature, index) => (
+                <FadeIn key={feature.title} delay={300 + index * 100}>
+                  <div className="flex gap-4">
+                    <div className="shrink-0">
+                      <CheckCircle className="h-6 w-6 rounded-full border bg-primary text-secondary stroke-white" />
+                    </div>
+                    <div>
+                      <h3 className="mb-1 text-2xl font-bold text-primary">{feature.title}</h3>
+                      <p className="text-muted-foreground">{feature.description}</p>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
             </div>
-            {/* Experience Badge */}
-            <div className="hidden lg:block absolute -bottom-12 w-[240px] h-[240px] -left-12 overflow-hidden rounded-xl text-white">
-              <img src={teamPlumber} alt="Close-up of HVLP spray finish" className="h-full object-cover " />
-            </div>
+
+            <a href="tel:+441134182075">
+              <FadeIn delay={600}>
+                <FlipButton>Call 0113 418 2075</FlipButton>
+              </FadeIn>
+            </a>
           </div>
-        </FadeIn>
+
+          <FadeIn className="order-1 h-[90%] lg:order-2">
+            <div className="relative lg:h-full">
+              <div className="aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-auto lg:h-full">
+                <img
+                  src={heroPlumber}
+                  alt="Plumbing service work in a home"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-12 -left-12 hidden h-[240px] w-[240px] overflow-hidden rounded-xl text-white lg:block">
+                <img
+                  src={teamPlumber}
+                  alt="Close view of service work"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
-    </div>
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[84%] h-[1px] bg-black/10 z-10" />
-  </section >;
+      <div className="absolute left-1/2 top-0 z-10 h-px w-[84%] -translate-x-1/2 bg-black/10" />
+    </section>
+  );
 };
-export default About;
+
+export default Solutions;

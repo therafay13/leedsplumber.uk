@@ -7,142 +7,121 @@ import heroGrid6 from "@/assets/hero-grid-6.jpg";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const FlipButton = ({
   children,
-  variant = "light"
+  variant = "light",
 }: {
   children: React.ReactNode;
   variant?: "light" | "dark";
 }) => {
   const bgClass = variant === "light"
     ? "bg-tertiary text-white hover:bg-tertiary/90"
-    : "bg-primary text-white border border-white/40 hover:bg-secondary";
+    : "border border-white/40 bg-primary text-white hover:bg-secondary";
+
   return (
-    <Button size="default" className={`group relative overflow-hidden font-semibold rounded-full px-6 ${bgClass}`}>
+    <Button size="default" className={`group relative overflow-hidden rounded-full px-6 font-semibold ${bgClass}`}>
       <span className="flex items-center gap-2 font-bold transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
         {children}
       </span>
-      <span className="absolute inset-0 flex font-bold items-center justify-center gap-2 transition-all duration-300 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+      <span className="absolute inset-0 flex items-center justify-center gap-2 font-bold opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         {children}
       </span>
     </Button>
   );
 };
+
 const Hero = () => {
-  const leftColumnImages = [{
-    src: heroGrid1,
-    alt: "Spray painter applying matte finish to kitchen cabinet door",
-    className: "rounded-2xl"
-  }, {
-    src: heroGrid3,
-    alt: "Spray painter in PPE inside spray booth",
-    className: "rounded-full"
-  }, {
-    src: heroGrid5,
-    alt: "HVLP spray gun atomising ember-coloured paint",
-    className: "rounded-2xl"
-  }];
-  const rightColumnImages = [{
-    src: heroGrid2,
-    alt: "Freshly resprayed anthracite uPVC window frame",
-    className: "rounded-full"
-  }, {
-    src: heroGrid4,
-    alt: "Resprayed charcoal garage door on a UK home",
-    className: "rounded-2xl"
-  }, {
-    src: heroGrid6,
-    alt: "Painter masking uPVC fascias and soffits on-site",
-    className: "rounded-full"
-  }];
+  const leftColumnImages = [
+    { src: heroGrid1, alt: "Hands-on service work in a home", className: "rounded-2xl" },
+    { src: heroGrid3, alt: "Service team working carefully on-site", className: "rounded-full" },
+    { src: heroGrid5, alt: "Close detail from a completed service job", className: "rounded-2xl" },
+  ];
+  const rightColumnImages = [
+    { src: heroGrid2, alt: "Home service detail", className: "rounded-full" },
+    { src: heroGrid4, alt: "Careful work in a residential setting", className: "rounded-2xl" },
+    { src: heroGrid6, alt: "Practical work carried out on-site", className: "rounded-full" },
+  ];
   const allImages = [...leftColumnImages, ...rightColumnImages];
   const mobileStripImages = [...allImages, ...allImages, ...allImages];
-  return <section className="relative bg-primary overflow-hidden">
-    {/* Content */}
-    <div className="container-custom section-padding relative z-10">
-      <div className="grid lg:grid-cols-2 gap-12 relative items-center lg:min-h-[calc(100vh-8rem)]">
-        {/* Left Content */}
-        <div className="max-w-7xl lg:min-w-[700px] relative z-10 pb-8 lg:pb-16">
-          <div className="animate-fade-up">
-            <h1 className="text-white font-bold mb-6 text-5xl md:text-6xl lg:text-7xl leading-[1.1] max-w-[800px] text-left xl:text-7xl">
-              Emergency Plumbing
-              <br />
-              <span className="text-white">Across Leeds</span>
-            </h1>
-          </div>
 
-          <p style={{
-            animationDelay: "0.1s"
-          }} className="text-white text-lg mb-8 max-w-[800px] animate-fade-up md:text-base">
-            24 hours a day, 365 days a year. Emergency repairs, blocked drains, leaks, bathrooms, and heating.
-          </p>
+  return (
+    <section className="relative overflow-hidden bg-primary">
+      <div className="container-custom section-padding relative z-10">
+        <div className="relative grid items-center gap-12 lg:min-h-[calc(100vh-8rem)] lg:grid-cols-2">
+          <div className="relative z-10 max-w-7xl pb-8 lg:min-w-[700px] lg:pb-16">
+            <div className="animate-fade-up">
+              <h1 className="mb-6 max-w-[800px] text-left text-5xl font-bold leading-[1.1] text-white md:text-6xl lg:text-7xl xl:text-7xl">
+                Emergency Plumbing
+                <br />
+                <span className="text-white">Across Leeds</span>
+              </h1>
+            </div>
 
-          <div className="flex flex-wrap items-center gap-4 mb-12 animate-fade-up" style={{
-            animationDelay: "0.2s"
-          }}>
-            <Link to="/quote">
-              <FlipButton>Get A Free Quote</FlipButton>
-            </Link>
-            <a href="tel:+441134182075">
-              <FlipButton variant="dark">
-                <Phone />
-                Call 0113 418 2075
-              </FlipButton>
-            </a>
-          </div>
+            <p className="mb-8 max-w-[800px] animate-fade-up text-base text-white md:text-lg" style={{ animationDelay: "0.1s" }}>
+              24 hours a day, 365 days a year for emergencies, repairs, leaks, drains and planned work.
+            </p>
 
-          {/* Client Stats */}
-          <div className="flex items-center gap-4 animate-fade-up" style={{
-            animationDelay: "0.3s"
-          }}>
-            <div className="flex items-stretch">
-              <div className="w-1 bg-tertiary rounded-full self-stretch mr-4" />
-              <div className="flex items-center">
-                <div>
-                  <p className="text-white text-3xl font-bold">24/7</p>
-                  <p className="text-white/60 text-xs mt-1">Emergency support</p>
-                </div>
-                <div className="w-px bg-white/20 self-stretch mx-6" />
-                <div>
-                  <p className="text-white text-3xl font-bold">£0</p>
-                  <p className="text-white/60 text-xs mt-1">Call-out charge</p>
+            <div className="mb-12 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <Link to="/quote">
+                <FlipButton>Get A Free Quote</FlipButton>
+              </Link>
+              <a href="tel:+441134182075">
+                <FlipButton variant="dark">
+                  <Phone />
+                  Call 0113 418 2075
+                </FlipButton>
+              </a>
+            </div>
+
+            <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <div className="flex items-stretch">
+                <div className="mr-4 w-1 self-stretch rounded-full bg-tertiary" />
+                <div className="flex items-center">
+                  <div>
+                    <p className="text-3xl font-bold text-white">24/7</p>
+                    <p className="mt-1 text-xs text-white/60">Emergency support</p>
+                  </div>
+                  <div className="mx-6 w-px self-stretch bg-white/20" />
+                  <div>
+                    <p className="text-3xl font-bold text-white">Free</p>
+                    <p className="mt-1 text-xs text-white/60">Quotes, no call-out charge</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Side - Image Grid with Marquee */}
-        <div style={{
-          width: '432px'
-        }} className="hidden lg:flex gap-7 items-start justify-end absolute right-[10%] top-0 bottom-0 overflow-hidden z-0">
-          {/* Left Column - slides down continuously */}
-          <div className="flex flex-col animate-marquee-down">
-            {[...leftColumnImages, ...leftColumnImages, ...leftColumnImages].map((image, index) => <div key={index} className="overflow-hidden flex-shrink-0 pb-4">
-              <img src={image.src} alt={image.alt} className={`w-full h-48 object-cover ${image.className}`} />
-            </div>)}
+          <div className="absolute right-[10%] top-0 bottom-0 z-0 hidden w-[432px] items-start justify-end gap-7 overflow-hidden lg:flex">
+            <div className="flex flex-col animate-marquee-down">
+              {[...leftColumnImages, ...leftColumnImages, ...leftColumnImages].map((image, index) => (
+                <div key={index} className="flex-shrink-0 overflow-hidden pb-4">
+                  <img src={image.src} alt={image.alt} className={`h-48 w-full object-cover ${image.className}`} />
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col animate-marquee-up" style={{ animationDelay: "-5s" }}>
+              {[...rightColumnImages, ...rightColumnImages, ...rightColumnImages].map((image, index) => (
+                <div key={index} className="flex-shrink-0 overflow-hidden pb-4">
+                  <img src={image.src} alt={image.alt} className={`h-48 w-full object-cover ${image.className}`} />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Right Column - slides up continuously */}
-          <div className="flex flex-col animate-marquee-up" style={{ animationDelay: "-5s" }}>
-            {[...rightColumnImages, ...rightColumnImages, ...rightColumnImages].map((image, index) => <div key={index} className="overflow-hidden flex-shrink-0 pb-4">
-              <img src={image.src} alt={image.alt} className={`w-full h-48 object-cover ${image.className}`} />
-            </div>)}
-          </div>
-        </div>
-
-        {/* Mobile image strip — visible on mobile only */}
-        <div className="lg:hidden overflow-hidden -mx-4 md:-mx-8 pb-8 pt-2">
-          <div className="flex gap-3 animate-marquee-left w-max">
-            {mobileStripImages.map((image, index) => (
-              <div key={index} className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
-              </div>
-            ))}
+          <div className="-mx-4 overflow-hidden pb-8 pt-2 md:-mx-8 lg:hidden">
+            <div className="flex w-max gap-3 animate-marquee-left">
+              {mobileStripImages.map((image, index) => (
+                <div key={index} className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full">
+                  <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>;
+    </section>
+  );
 };
+
 export default Hero;

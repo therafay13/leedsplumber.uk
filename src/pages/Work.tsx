@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Link } from "react-router-dom";
 
-// Import existing images for works
 import work1 from "@/assets/work-1.png";
 import work2 from "@/assets/work-2.png";
 import work3 from "@/assets/work-3.png";
@@ -14,41 +13,41 @@ import work6 from "@/assets/work-6.png";
 
 const works = [
   {
-    slug: "kitchen-respray-chester",
+    slug: "emergency-pipe-repair",
     image: work1,
-    title: "Chester Kitchen Respray",
-    description: "Tired oak shaker kitchen in Chester stripped, primed and resprayed in matte charcoal with new brass hardware. Sprayed over three days with zero disruption to the family."
+    title: "Emergency pipe repair",
+    description: "A calm response to burst pipes, leaks and loss of water, with immediate steps to limit damage and restore the property.",
   },
   {
-    slug: "upvc-front-elevation",
+    slug: "blocked-drain-clearance",
     image: work2,
-    title: "uPVC Front Elevation — Ellesmere Port",
-    description: "Whole front elevation of white uPVC windows and composite door sprayed anthracite grey on-site, masked end-to-end and finished in a single day."
+    title: "Blocked drain clearance",
+    description: "Drain rodding, clearance and high-powered jetting selected for the blockage, the access and the pipework involved.",
   },
   {
-    slug: "garage-door-satin-black",
+    slug: "bathroom-plumbing",
     image: work3,
-    title: "Garage Door — Satin Black",
-    description: "Up-and-over garage door brought back to showroom condition without removal. Two-pack satin black finish, sprayed in-situ on a quiet residential driveway."
+    title: "Bathroom plumbing",
+    description: "Thoughtful repairs and replacements for taps, toilets, sinks, showers and the connections around them.",
   },
   {
-    slug: "fascias-soffits-refresh",
+    slug: "radiator-repair",
     image: work4,
-    title: "Fascias, Soffits & Downpipes",
-    description: "Weather-worn fascias and downpipes on a 1990s detached home restored to crisp white and matt black — a fraction of the cost of replacement uPVC."
+    title: "Radiator repair",
+    description: "Practical investigation of cold, leaking or unreliable radiators, valves and the pipework that serves them.",
   },
   {
-    slug: "industrial-steelwork-coating",
+    slug: "shower-repair",
     image: work5,
-    title: "Industrial Steel Coating",
-    description: "Internal warehouse steelwork prepped and coated with a hard-wearing protective finish. Completed across two shifts to keep the unit operational."
+    title: "Shower repair",
+    description: "Support for electric, mixer and power showers when flow, temperature or reliability has changed.",
   },
   {
-    slug: "shop-front-respray",
+    slug: "pump-saniflo-support",
     image: work6,
-    title: "Cheshire Oaks Shop Front",
-    description: "Retail unit resprayed out of hours so the client didn't lose a single trading hour. Charcoal frame with ember orange brand accents."
-  }
+    title: "Pump and Saniflo support",
+    description: "Installation, repair and maintenance enquiries for pumps, Saniflo systems, tanks and inlet equipment.",
+  },
 ];
 
 const Work = () => {
@@ -56,55 +55,50 @@ const Work = () => {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section with Work Cards */}
-      <section className="pt-20 lg:pt-32 bg-white">
+      <section className="bg-white pt-20 lg:pt-32">
         <div className="container-custom section-padding">
-          {/* Breadcrumb */}
-          <div className="text-muted-foreground text-sm mb-4">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+          <div className="mb-4 text-sm text-muted-foreground">
+            <Link to="/" className="transition-colors hover:text-primary">Home</Link>
             <span className="mx-2">/</span>
             <span className="text-primary">Work</span>
           </div>
 
-          {/* Header */}
-          <div className="flex max-md:flex-col gap-8 mb-16 justify-between">
-            <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold">Recent <span className="text-tertiary">Spray</span> Projects</h1>
-            <p className="text-muted-foreground max-w-[468px] text-lg font-medium lg:pt-4">
-              A selection of recent kitchens, uPVC, garage doors and commercial work sprayed across Cheshire, Ellesmere Port and the Wirral.
-            </p>
+          <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row">
+            <FadeIn>
+              <h1 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
+                Plumbing work <span className="text-tertiary">we handle</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="max-w-[468px] text-lg font-medium text-muted-foreground lg:pt-4">
+                A considered view of the emergency repairs, maintenance and planned plumbing work Leeds Plumber UK is set up to provide.
+              </p>
+            </FadeIn>
           </div>
 
-          {/* Work Cards Grid - 2 columns */}
-          <div className="grid md:grid-cols-2 gap-8 gap-y-16">
+          <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
             {works.map((work, index) => (
-              <FadeIn key={index} delay={index * 100}>
-                <div>
-                  {/* Image */}
-                  <div className="overflow-hidden rounded-2xl mb-6">
+              <FadeIn key={work.slug} delay={index * 100}>
+                <Link to={`/work/${work.slug}`} className="group block">
+                  <div className="mb-6 overflow-hidden rounded-2xl">
                     <img
                       src={work.image}
                       alt={work.title}
-                      className="w-full h-[420px] object-cover"
+                      className="h-[420px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-
-                  {/* Content */}
-                  <h5 className="text-black text-4xl font-bold mb-3">
+                  <h2 className="mb-3 text-3xl font-bold text-black transition-colors group-hover:text-primary md:text-4xl">
                     {work.title}
-                  </h5>
-                  <p className="text-muted-foreground font-medium leading-relaxed">
-                    {work.description}
-                  </p>
-                </div>
+                  </h2>
+                  <p className="font-medium leading-relaxed text-muted-foreground">{work.description}</p>
+                </Link>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-
       <CTA />
-
       <Footer />
     </div>
   );

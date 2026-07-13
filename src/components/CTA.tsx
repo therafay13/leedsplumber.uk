@@ -40,7 +40,7 @@ const CTA = () => {
               {/* Background Image */}
               <img
                 src={heroPlumber}
-                  alt="Spray painter respraying uPVC window"
+                  alt="Plumbing service work in a home"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
               {/* Gradient Overlay */}

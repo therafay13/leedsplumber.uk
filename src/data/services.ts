@@ -12,262 +12,222 @@ export interface Service {
   title: string;
   slug: string;
   description: string;
-  basePrice: number; // Base price per hour
-  complexityOptions: ComplexityOption[];
-  // DRAFT COPY — needs client review before launch
   aboutDescription: string;
   included: string[];
   benefits: string[];
   workSteps: { title: string; description: string }[];
 }
 
-export interface ComplexityOption {
-  label: string;
-  multiplier: number;
-  description: string;
-}
-
 export const services: Service[] = [
   {
     number: "01",
     image: service1,
-    title: "Kitchen Resprays",
-    slug: "kitchen-resprays",
+    title: "Emergency Plumbing",
+    slug: "emergency-plumbing",
     description:
-      "Transform tired kitchen cabinets, doors and worktops with a flawless factory-grade spray finish — a fraction of the cost of a full replacement.",
-    basePrice: 55,
-    complexityOptions: [
-      { label: "Small Kitchen", multiplier: 1, description: "Up to 10 doors and drawers" },
-      { label: "Medium Kitchen", multiplier: 1.6, description: "10–18 doors and drawers" },
-      { label: "Large Kitchen", multiplier: 2.4, description: "18+ doors, island and panels" },
-    ],
+      "A fast, practical response for burst pipes, flooding, loss of water and urgent faults across Leeds.",
     aboutDescription:
-      "A specialist spray finish gives worn or dated kitchen cabinetry a brand-new look without the disruption, mess and cost of ripping everything out. Doors, drawer fronts, end panels and even worktop edges can be resprayed in virtually any colour, leaving a smooth, durable surface that's built to handle everyday family life. It's the quickest way to completely change the feel of your kitchen while keeping the units that already fit your space perfectly.",
+      "When water is escaping or a vital fitting has failed, the first priority is to make the situation safe and limit further damage. Leeds Plumber UK provides emergency plumbing support for homes and businesses, with clear advice on the phone and a direct route to the right next step.",
     included: [
-      "Cabinet doors, drawer fronts and visible panels fully prepared and resprayed",
-      "Degreasing, fine sanding and priming so the new finish bonds properly",
-      "Choice of solid colours or wood-grain effects in standard RAL shades",
-      "Rehanging of doors and adjustment of hinges once fully cured",
+      "Initial advice to help you isolate water and reduce damage",
+      "Assessment of the fault and the safest repair approach",
+      "Repair or temporary make-safe work where appropriate",
+      "Clear explanation of what needs doing before further work begins",
     ],
     benefits: [
-      "A fraction of the cost of a full new fitted kitchen",
-      "Minimal disruption — your kitchen stays usable throughout the work",
-      "A tough, wipe-clean surface that resists everyday knocks and spills",
-      "Update the whole look in your choice of modern or classic colours",
+      "Available 24 hours a day, 365 days a year",
+      "Aims to arrive within one hour, depending on location and demand",
+      "No call-out charge, with charges starting from arrival",
+      "Calm, practical communication when the situation is stressful",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We visit to assess your cabinets, discuss colours and confirm exactly what's being sprayed." },
-      { title: "Preparation", description: "Doors and panels are removed, degreased, sanded and primed for a flawless, long-lasting bond." },
-      { title: "Spraying", description: "Multiple coats of colour are applied in a controlled finish to give a smooth, even surface." },
-      { title: "Completion & Handover", description: "Everything is rehung, adjusted and checked so your kitchen looks crisp and ready to use." },
+      { title: "Call and triage", description: "Tell us what has happened, where you are, and what you can see. We will help you take the safest immediate step." },
+      { title: "Assess the fault", description: "We identify the source, the risk, and the repair needed before recommending the work." },
+      { title: "Make it safe", description: "The priority is to stop the leak, restore essential service, or contain the problem." },
+      { title: "Explain the next step", description: "You receive a clear account of the work completed and any follow-up the property needs." },
     ],
   },
   {
     number: "02",
     image: service2,
-    title: "uPVC Windows, Doors & Conservatories",
-    slug: "upvc-windows-doors",
+    title: "General Plumbing Repairs",
+    slug: "plumbing-repairs",
     description:
-      "Refresh dated white uPVC into modern anthracite, charcoal or any RAL colour — fully prepped, masked and sprayed on-site.",
-    basePrice: 45,
-    complexityOptions: [
-      { label: "Single Property Section", multiplier: 1, description: "1–4 windows or one door" },
-      { label: "Full Frontage", multiplier: 1.8, description: "Whole front or rear elevation" },
-      { label: "Whole House + Conservatory", multiplier: 2.8, description: "Every window, door & conservatory" },
-    ],
+      "Reliable repairs for the everyday faults that interrupt a kitchen, bathroom, rental property or workplace.",
     aboutDescription:
-      "Tired of yellowing white uPVC? Spraying lets you transform windows, doors and conservatories into a modern anthracite, charcoal, black or any RAL colour without the huge cost and upheaval of replacing the frames. The coating is applied in-situ with careful masking of glass and surrounds, leaving a factory-style finish that revives the whole exterior. It's one of the most cost-effective ways to modernise a property's kerb appeal.",
+      "Not every plumbing problem is an emergency, but small faults rarely improve by themselves. We handle practical repairs to fittings, pipework and water systems, taking time to identify the cause and leave you with a solution that makes sense for the property.",
     included: [
-      "Full cleaning and keying of the existing uPVC surfaces",
-      "Careful masking of glass, brickwork and surrounding fittings",
-      "Specialist exterior-grade spray coating in your chosen colour",
-      "Windows, doors and conservatory framework all finished on-site",
+      "Fault finding for visible leaks, weak flow and failed fittings",
+      "Repair or replacement of common plumbing components",
+      "Kitchen and utility plumbing, including sink connections",
+      "Advice on the most proportionate repair for the property",
     ],
     benefits: [
-      "A modern colour change without replacing your windows and doors",
-      "Far cheaper and faster than a full frame replacement",
-      "UV-stable coating that won't yellow like old white uPVC",
-      "Instantly refreshes the look of your home's exterior",
+      "One clear point of contact for repair work",
+      "Suitable for homes, landlords and commercial premises",
+      "Practical recommendations without unnecessary upselling",
+      "Free quotes for planned work",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We assess the frames, confirm colours and check condition before any work begins." },
-      { title: "Preparation", description: "Surfaces are cleaned, keyed and all glass and surroundings are masked off to protect them." },
-      { title: "Spraying", description: "Durable exterior-grade colour is applied in even coats for a smooth, consistent finish." },
-      { title: "Completion & Handover", description: "Masking is removed, edges are checked and everything is left clean and ready." },
+      { title: "Understand the problem", description: "We listen to what has changed, when it started, and what the fitting or pipework is doing now." },
+      { title: "Inspect the cause", description: "The visible symptom is not always the source, so we check the surrounding connections and controls." },
+      { title: "Repair properly", description: "We complete the agreed repair using suitable parts and a method that fits the property." },
+      { title: "Test and explain", description: "The work is tested and you are told what was found, what was done, and what to watch for." },
     ],
   },
   {
     number: "03",
     image: service3,
-    title: "Fascias, Soffits & Downpipes",
-    slug: "fascias-soffits-downpipes",
+    title: "Leaks, Burst Pipes and Overflows",
+    slug: "leaks-burst-pipes",
     description:
-      "Bring eaves and rainwater goods back to life with a hard-wearing exterior spray finish — far cheaper than replacement uPVC.",
-    basePrice: 50,
-    complexityOptions: [
-      { label: "Single Elevation", multiplier: 1, description: "One side of a typical home" },
-      { label: "Full House", multiplier: 1.8, description: "All fascias, soffits and downpipes" },
-      { label: "Large / Detached", multiplier: 2.5, description: "Detached property or unusual heights" },
-    ],
+      "Careful leak tracing and repair for pipework, tanks, valves, overflows and the damage they can leave behind.",
     aboutDescription:
-      "Faded, stained or mossy fascias, soffits and downpipes drag down the look of an otherwise tidy home. Spraying restores them to a clean, crisp finish that smartens up the roofline and rainwater goods — at a fraction of the cost of replacing the uPVC. The coating is flexible and weather-resistant, so it stands up to British rain and cold without flaking. It's a quick, low-disruption way to refresh the parts of your home everyone notices from the street.",
+      "A leak can travel before it becomes visible. We investigate the source rather than simply drying the symptom, whether the issue is a burst pipe, a failing valve, an overflowing tank or a concealed connection. The aim is a safe repair and a clear explanation of what caused it.",
     included: [
-      "Thorough cleaning and removal of algae, moss and grime",
-      "Fascias, soffits and downpipe surfaces fully prepared",
-      "Weather-resistant exterior coating in your chosen colour",
-      "Guttering and brackets masked and protected throughout",
+      "Visible leak assessment and tracing of likely sources",
+      "Burst pipe and damaged connection repairs",
+      "Overflow, tank and inlet valve fault finding",
+      "Testing of repaired pipework and fittings",
     ],
     benefits: [
-      "Refreshes the roofline without costly uPVC replacement",
-      "Weather-resistant finish that won't flake or peel easily",
-      "Removes unsightly staining and discolouration",
-      "Smartens up the exterior visible to neighbours and passers-by",
+      "Helps limit avoidable water damage",
+      "Useful for both urgent faults and persistent mystery leaks",
+      "Clear distinction between the immediate repair and any follow-up work",
+      "Advice on the stop tap and sensible next steps",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We check access, condition and heights, then agree colours and scope." },
-      { title: "Preparation", description: "Surfaces are cleaned down, treated and prepared with guttering safely masked." },
-      { title: "Spraying", description: "A durable exterior coating is applied evenly across all roofline and downpipe surfaces." },
-      { title: "Completion & Handover", description: "Everything is unmasked, checked and left clean and tidy." },
+      { title: "Stop the flow", description: "We help isolate the water supply where needed and assess the immediate risk to the property." },
+      { title: "Trace the source", description: "We inspect pipework, valves, tanks and nearby fittings to identify where the water is coming from." },
+      { title: "Repair the fault", description: "The damaged section or fitting is repaired or replaced using the appropriate approach." },
+      { title: "Check the system", description: "We restore the supply, test the repair and explain any signs that should prompt a return call." },
     ],
   },
   {
     number: "04",
     image: service4,
-    title: "Garage Door Respray",
-    slug: "garage-door-respray",
+    title: "Blocked Drains and Jetting",
+    slug: "drainage-jetting",
     description:
-      "Up & over, sectional or roller garage doors brought back to showroom condition in any colour, sprayed in-situ.",
-    basePrice: 45,
-    complexityOptions: [
-      { label: "Single Door", multiplier: 1, description: "Standard single garage door" },
-      { label: "Double Door", multiplier: 1.6, description: "Double garage door or two singles" },
-      { label: "Premium Finish", multiplier: 2.2, description: "Multi-coat metallic or specialist coating" },
-    ],
+      "Drain unblocking, rodding, clearance and high-powered jetting for slow, backed-up or recurring drainage problems.",
     aboutDescription:
-      "A faded, scratched or simply dated garage door can let down the whole front of your home. Whether it's up-and-over, sectional or roller, the door can be resprayed in-situ in almost any colour — including metallic and wood-effect finishes — to match or contrast with the rest of your property. The result is a showroom-quality surface that hides years of wear and instantly lifts your home's appearance, all without the cost of a brand-new door.",
+      "A blocked drain is usually a flow problem before it becomes a flood problem. We clear domestic and commercial drainage issues using the method suited to the blockage, from straightforward rodding and clearance to high-powered jetting when a deeper clean is required.",
     included: [
-      "Full clean and preparation of the existing door surface",
-      "Masking of tracks, handles, seals and surrounding brickwork",
-      "Durable spray coating in solid, metallic or specialist finishes",
-      "Hardware cleaned up and reassembled once cured",
+      "Assessment of the affected drain and surrounding access points",
+      "Drain rodding and mechanical clearance where suitable",
+      "High-powered jetting for stubborn build-up and recurring flow issues",
+      "Practical advice on reducing the chance of the blockage returning",
     ],
     benefits: [
-      "A fresh, showroom-style finish without buying a new door",
-      "Covers scratches, fading and years of everyday wear",
-      "Choose any colour to complement your home's exterior",
-      "Quick, on-site work with no need to remove the door",
+      "A direct response to slow or backed-up drainage",
+      "Suitable for homes, landlords and businesses",
+      "The method is matched to the blockage rather than assumed in advance",
+      "Clear explanation of any access or follow-up required",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We check the door type and condition, then agree the colour and finish." },
-      { title: "Preparation", description: "The door is cleaned, keyed and masked along with all hardware and surrounds." },
-      { title: "Spraying", description: "Even coats of hard-wearing colour are applied for a smooth, consistent finish." },
-      { title: "Completion & Handover", description: "Masking is removed, the door is tested and the area is left clean." },
+      { title: "Locate the restriction", description: "We establish which outlet or run is affected and check the safest access point." },
+      { title: "Choose the method", description: "Straightforward clearance, rodding or jetting is selected according to the blockage and pipework." },
+      { title: "Restore the flow", description: "The obstruction is removed and the line is tested to confirm the water is moving correctly." },
+      { title: "Leave clear advice", description: "You receive practical guidance on use, maintenance and signs of a recurring issue." },
     ],
   },
   {
     number: "05",
     image: service5,
-    title: "Wardrobes & Interior Coatings",
-    slug: "wardrobes-interior-coatings",
+    title: "Bathrooms, Taps and Toilets",
+    slug: "bathrooms-taps-toilets",
     description:
-      "Fitted wardrobes, staircases, panelling and interior joinery resprayed to a flawless hand-finished workshop standard.",
-    basePrice: 50,
-    complexityOptions: [
-      { label: "Single Unit", multiplier: 1, description: "One wardrobe or staircase" },
-      { label: "Bedroom Suite", multiplier: 1.7, description: "Full fitted bedroom" },
-      { label: "Whole Home Interior", multiplier: 2.6, description: "Multiple rooms of joinery" },
-    ],
+      "Thoughtful plumbing repairs, replacements and installations for bathrooms, taps, toilets, sinks and wet-room fittings.",
     aboutDescription:
-      "Fitted wardrobes, staircases, panelling and interior joinery can all be resprayed to a flawless, hand-finished standard — ideal for matching new decor or simply refreshing tired woodwork. Rather than replacing perfectly good joinery, spraying lets you change the colour and finish entirely, from dark wood to a clean modern shade. The result feels like a workshop-quality refinishing job carried out in your home, with minimal mess and disruption to your day-to-day life.",
+      "Bathrooms are made up of many small connections, and a fault in one fitting can quickly affect the rest of the room. We help with tap and toilet repairs, sink plumbing, shower connections and planned bathroom plumbing, keeping the work practical and the finish tidy.",
     included: [
-      "Doors, frames, panels and visible joinery fully prepared",
-      "Sanding, filling and priming for a smooth, even surface",
-      "Hand-finished colour in your chosen shade or effect",
-      "Hardware removed, cleaned and refitted where needed",
+      "Tap, outside tap and toilet flush repairs",
+      "Sink, waste and appliance plumbing connections",
+      "Bathroom and wet-room plumbing support",
+      "Replacement of worn or failed valves, traps and fittings",
     ],
     benefits: [
-      "Transform joinery without the cost of replacement",
-      "Match existing decor or go for a completely new look",
-      "Workshop-quality finish applied with minimal household disruption",
-      "Revitalises dated, dark or scuffed interior woodwork",
+      "A considered repair before a replacement is recommended",
+      "Suitable for small faults and planned improvement work",
+      "Care taken around finished surfaces and occupied homes",
+      "Clear quotes for planned bathroom plumbing",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We assess the joinery, discuss colours and confirm the scope of the work." },
-      { title: "Preparation", description: "Surfaces are sanded, filled and primed, with fixtures and floors protected." },
-      { title: "Spraying", description: "Fine coats of colour are applied for a smooth, hand-finished appearance." },
-      { title: "Completion & Handover", description: "Hardware is refitted and everything is checked and left tidy." },
+      { title: "Review the fitting", description: "We look at the existing installation, the fault, and the access available around it." },
+      { title: "Agree the work", description: "You receive a straightforward explanation of the repair or replacement before it starts." },
+      { title: "Install carefully", description: "The fitting is repaired or installed with attention to connections, seals and surrounding finishes." },
+      { title: "Test the result", description: "Flow, drainage and the affected fitting are tested before the work is handed back." },
     ],
   },
   {
     number: "06",
     image: service6,
-    title: "Shop Fronts & Commercial",
-    slug: "shop-fronts-commercial",
+    title: "Radiators, Showers and Pumps",
+    slug: "radiators-showers-pumps",
     description:
-      "Retail facades, signage panels and commercial uPVC sprayed out of hours to minimise downtime for your business.",
-    basePrice: 65,
-    complexityOptions: [
-      { label: "Single Frontage", multiplier: 1, description: "One shop front or unit" },
-      { label: "Full Refurb", multiplier: 1.8, description: "Frontage, signage and trims" },
-      { label: "Multi-Site Rollout", multiplier: 2.8, description: "Several branches across the region" },
-    ],
+      "Practical help with radiators, electric and mixer showers, power showers, pumps and related water-flow problems.",
     aboutDescription:
-      "For retail and commercial premises, the appearance of the frontage directly affects footfall and first impressions. We spray shop fronts, signage panels, commercial uPVC and metalwork to refresh tired facades and maintain a professional, well-cared-for look. Work can be scheduled out of hours or around trading times to keep disruption to your business to an absolute minimum, whether it's a single unit or a multi-site rollout.",
+      "Water pressure, temperature and flow problems can make a home uncomfortable very quickly. We investigate the fitting and the wider system around it, then recommend the work needed to restore reliable everyday use.",
     included: [
-      "Shop fronts, signage panels and commercial uPVC prepared and sprayed",
-      "Flexible scheduling including out-of-hours where needed",
-      "Masking and protection of glazing, pavements and fittings",
-      "Consistent colour and finish across single or multiple sites",
+      "Radiator repairs and replacement support",
+      "Electric, mixer and power shower plumbing",
+      "Pump installation, replacement and maintenance enquiries",
+      "Checks for flow, pressure and related valve issues",
     ],
     benefits: [
-      "Refresh a tired frontage without closing for a full refit",
-      "Out-of-hours options to minimise downtime for your business",
-      "Consistent, professional results across multiple locations",
-      "A cleaner, more inviting appearance for customers",
+      "A repair-led approach to heating and water-flow faults",
+      "Clear explanation of what the fitting can and cannot resolve",
+      "Suitable for planned upgrades and urgent loss of service",
+      "Free quotes for work that needs planning",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We survey the premises, agree the scope and plan timings around your business." },
-      { title: "Preparation", description: "Surfaces are cleaned and keyed, with glazing and surrounds fully protected." },
-      { title: "Spraying", description: "Durable coatings are applied evenly for a professional, consistent finish." },
-      { title: "Completion & Handover", description: "The site is unmasked, cleaned and left ready for trading." },
+      { title: "Describe the symptom", description: "We establish whether the issue is flow, pressure, temperature, noise or a complete loss of service." },
+      { title: "Check the system", description: "The fitting and its surrounding valves, connections and supply are assessed together." },
+      { title: "Complete the repair", description: "We carry out the agreed repair or replacement with the property protected throughout." },
+      { title: "Confirm operation", description: "The fitting is tested and you receive a clear handover before we leave." },
     ],
   },
   {
     number: "07",
     image: service7,
-    title: "Industrial Protective Coatings",
-    slug: "industrial-protective-coatings",
+    title: "Saniflo and Water Systems",
+    slug: "saniflo-water-systems",
     description:
-      "Hard-wearing protective coatings for steelwork, plant, racking and factory equipment — applied with HVLP and airless systems.",
-    basePrice: 70,
-    complexityOptions: [
-      { label: "Small Plant / Racking", multiplier: 1, description: "Single units or short runs" },
-      { label: "Structural Steel", multiplier: 1.9, description: "Beams, columns and frameworks" },
-      { label: "Full Site Coating", multiplier: 3, description: "Large facility, multi-day project" },
-    ],
+      "Support with Saniflo installations, water tanks, ball valves, inlet systems and the plumbing around them.",
     aboutDescription:
-      "Industrial environments demand coatings that do more than look good — they need to protect steelwork, plant, racking and machinery from corrosion, chemicals and constant use. We apply hard-wearing protective coatings using HVLP and airless spray systems suited to large-scale and high-output facilities. The right coating extends the life of your assets, keeps them compliant and presentable, and reduces the frequency of costly repainting or replacement.",
+      "Some spaces rely on pumps, macerators, tanks or specialist inlet systems to work properly. We provide practical installation, repair and maintenance support for these systems, with the limits of the existing setup explained before work begins.",
     included: [
-      "Steelwork, plant, racking and machinery surface preparation",
-      "Corrosion treatment and priming where required",
-      "Industrial-grade protective coatings via HVLP and airless systems",
-      "Flexible scheduling to suit operational and shutdown periods",
+      "Saniflo installation and repair enquiries",
+      "Ball valves, tanks and inlet system repairs",
+      "Pump maintenance, replacement and installation support",
+      "Hot and cold water system fault finding",
     ],
     benefits: [
-      "Protects steelwork and equipment from corrosion and wear",
-      "Extends the service life of costly industrial assets",
-      "Large-scale application using HVLP and airless spray systems",
-      "Hard-wearing finishes built for demanding environments",
+      "Useful for additions, adaptations and difficult access areas",
+      "Attention to the wider system, not only the failed component",
+      "Clear advice when an installation needs further specialist input",
+      "Free quotes for planned system work",
     ],
     workSteps: [
-      { title: "Booking & Inspection", description: "We survey the site and assets, then recommend the right coating system for the environment." },
-      { title: "Preparation", description: "Surfaces are degreased, treated for corrosion and primed for maximum adhesion." },
-      { title: "Spraying", description: "Protective coatings are applied with HVLP and airless systems for full, even coverage." },
-      { title: "Completion & Handover", description: "The coating is inspected for coverage and the area is handed back ready for use." },
+      { title: "Understand the setup", description: "We review the existing system, what it serves, and the issue you are experiencing." },
+      { title: "Inspect the components", description: "Tanks, valves, pumps, pipework and discharge routes are checked as relevant." },
+      { title: "Plan the repair", description: "You receive a clear recommendation that accounts for access, compatibility and future use." },
+      { title: "Test and hand over", description: "The work is tested and the important maintenance or operating points are explained." },
     ],
   },
 ];
 
+const legacyServiceAliases: Record<string, string> = {
+  "kitchen-resprays": "emergency-plumbing",
+  "upvc-windows-doors": "plumbing-repairs",
+  "fascias-soffits-downpipes": "leaks-burst-pipes",
+  "garage-door-respray": "drainage-jetting",
+  "wardrobes-interior-coatings": "bathrooms-taps-toilets",
+  "shop-fronts-commercial": "radiators-showers-pumps",
+  "industrial-protective-coatings": "saniflo-water-systems",
+};
+
 export const getServiceBySlug = (slug: string): Service | undefined => {
-  return services.find((s) => s.slug === slug);
+  const canonicalSlug = legacyServiceAliases[slug] ?? slug;
+  return services.find((service) => service.slug === canonicalSlug);
 };

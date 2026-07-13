@@ -4,64 +4,66 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { services } from "@/data/services";
 import { Link } from "react-router-dom";
+
 const Services = () => {
-  return <div className="min-h-screen">
-    <Header />
+  return (
+    <div className="min-h-screen">
+      <Header />
 
-    {/* Hero Section with Service Cards */}
-    <section className="pt-20 bg-white">
-      <div className="container-custom section-padding">
-        {/* Breadcrumb */}
-        <div className="text-muted-foreground text-sm mb-4">
-          <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-primary">Service</span>
+      <section className="bg-white pt-20">
+        <div className="container-custom section-padding">
+          <div className="mb-4 text-sm text-muted-foreground">
+            <Link to="/" className="transition-colors hover:text-primary">Home</Link>
+            <span className="mx-2">/</span>
+            <span className="text-primary">Services</span>
+          </div>
+
+          <div className="mb-16 grid gap-8 lg:grid-cols-2">
+            <FadeIn>
+              <h1 className="text-4xl font-bold text-black md:text-5xl lg:text-6xl">
+                Plumbing <span className="text-tertiary">services</span>
+              </h1>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="text-lg text-muted-foreground lg:pt-4">
+                Emergency plumbing, repairs, drainage, bathrooms, radiators, showers and water systems for homes and businesses across Leeds.
+              </p>
+            </FadeIn>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {services.map((service, index) => (
+              <FadeIn key={service.slug} delay={index * 100}>
+                <Link to={`/services/${service.slug}`} className="block h-full">
+                  <article className="group h-full cursor-pointer rounded-xl bg-card px-7 py-7 transition-all duration-300 hover:bg-primary">
+                    <div className="mb-6 min-h-[300px] overflow-hidden rounded-md">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full rounded-md object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="mb-3 flex items-center justify-between gap-4">
+                      <h2 className="text-3xl font-bold text-black transition-colors duration-300 group-hover:text-white">
+                        {service.title}
+                      </h2>
+                      <span className="text-sm font-bold text-primary transition-colors duration-300 group-hover:text-tertiary">{service.number}</span>
+                    </div>
+                    <p className="leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-white/80">
+                      {service.description}
+                    </p>
+                  </article>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-bold">Our <span className="text-tertiary">Spray</span> Services</h1>
-          <p className="text-muted-foreground text-lg lg:pt-4">
-            Domestic, commercial and industrial spray painting across Cheshire and Ellesmere Port — every surface masked, prepped and finished to a factory standard.
-          </p>
-        </div>
-
-        {/* Service Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => <FadeIn key={index} delay={index * 100}>
-            <Link to={`/services/${service.slug}`}>
-              <div className="group cursor-pointer transition-all bg-card rounded-xl hover:bg-primary h-full px-[30px] py-[28px] duration-300">
-                {/* Image */}
-                <div className="overflow-hidden mb-6 rounded-md min-h-[340px] max-h-[340px]">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-md" />
-                </div>
-
-                {/* Content */}
-                <div className="flex items-center justify-between mb-3">
-                  <h5 className="font-bold text-4xl duration-300 transition-all text-black group-hover:text-accent">
-                    {service.title}
-                  </h5>
-                </div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg font-bold text-primary group-hover:text-white transition-colors duration-300">
-                    From £{service.basePrice}/hr
-                  </span>
-                </div>
-                <p className="text-muted-foreground leading-relaxed transition-all duration-300 group-hover:text-white">
-                  {service.description}
-                </p>
-              </div>
-            </Link>
-          </FadeIn>)}
-        </div>
-      </div>
-    </section>
-
-
-
-    <CTA />
-
-    <Footer />
-  </div>;
+      <CTA />
+      <Footer />
+    </div>
+  );
 };
+
 export default Services;

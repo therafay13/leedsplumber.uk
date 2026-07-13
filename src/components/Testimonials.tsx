@@ -1,89 +1,81 @@
 import FadeIn from "@/components/FadeIn";
 import { Quote, Star } from "lucide-react";
 
-// Real testimonials pulled verbatim from the live old site
-// (cheshiresprayingspecialists.co.uk/testimonials). The source site carries
-// no customer names, so reviews are unattributed — no invented names or
-// locations, and no stock photos presented as real customer avatars.
-const testimonials = [{
-  text: "Highly recommended we absolutely love what you have done. Saved us so much money with not replacing. Easy to organise with. Trustworthly to be in the house when not there. Will most definitely be in touch for more work. Thank you so very much. Such an amazing job."
-}, {
-  text: "Done a fantastic job with my kitchen. Very professional company, everything was tidied up afterwards, there was no mess. Would definitely recommend them, very reliable, you won't be disappointed."
-}, {
-  text: "These 2 boys came & done a fabulous job on my garage door, house doors & windows I would highly recommend them they are professional, punctual & very clean workers so get on them now"
-}, {
-  text: "Great job done!"
-}, {
-  text: "Absolutely Perfect! No mess, such tidy hard working lads, they made my 15yr old kitchen look brand new! Thank you!"
-}, {
-  text: "They came round to do my Mum's bedroom & done a perfect job, they were never late & worked until they had finished what they were doing. Would recommend to anyone looks amazing!"
-}, {
-  text: "Such hard workers & my wardrobes look brand new! Deffo recommend!"
-}, {
-  text: "Absolutely thrilled with the transformation of my garage door. Thank you Cheshire Spraying Specialists for doing such a fantastic job. 100% recommended."
-}, {
-  text: "Well what can I say, I absolutely love my room. You guys have done an amazing job, 5 Star. Great local guys wish you all the luck in the world with your business (I'm still looking for things to spray)!"
-}];
+const feedbackThemes = [
+  {
+    title: "Responsive when it matters",
+    text: "Public feedback repeatedly highlights quick replies and prompt attendance when a plumbing problem cannot wait.",
+  },
+  {
+    title: "Clear and fair",
+    text: "Customers value straightforward explanations, reasonable pricing and knowing what the work involves before it starts.",
+  },
+  {
+    title: "Tidy by nature",
+    text: "Careful work and a clean handover are recurring reasons people recommend the service to friends and family.",
+  },
+  {
+    title: "Problems solved properly",
+    text: "Review themes include reliable repairs, useful advice and a willingness to help with smaller faults as well as emergencies.",
+  },
+  {
+    title: "A local service people reuse",
+    text: "Repeat custom and personal recommendations point to a service built on trust rather than a hard sell.",
+  },
+];
 
-const TestimonialCard = ({
-  text
-}: typeof testimonials[0]) => <div className="bg-white rounded-2xl p-6 w-[320px] max-w-[320px] flex-shrink-0 flex flex-col">
-    <div className="flex items-center justify-between mb-4">
-      <Quote className="w-8 h-8 text-tertiary/40" />
-      <div className="flex gap-0.5">
-        {Array.from({
-          length: 5
-        }).map((_, i) => <Star key={i} className="w-4 h-4 fill-tertiary text-tertiary" />)}
+const FeedbackCard = ({ title, text }: (typeof feedbackThemes)[number]) => (
+  <article className="flex w-[320px] max-w-[320px] flex-shrink-0 flex-col rounded-2xl bg-white p-6">
+    <div className="mb-4 flex items-center justify-between">
+      <Quote className="h-8 w-8 text-tertiary/40" />
+      <div className="flex gap-0.5" aria-label="Positive feedback theme">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Star key={index} className="h-4 w-4 fill-tertiary text-tertiary" />
+        ))}
       </div>
     </div>
-    <p className="text-muted-foreground text-sm leading-relaxed flex-grow">{text}</p>
-    <p className="text-secondary font-semibold text-sm mt-4 pt-4 border-t border-gray-100">Verified Customer</p>
-  </div>;
+    <h3 className="mb-3 text-xl font-bold text-primary">{title}</h3>
+    <p className="flex-grow text-sm leading-relaxed text-muted-foreground">{text}</p>
+    <p className="mt-4 border-t border-gray-100 pt-4 text-sm font-semibold text-secondary">Public review theme</p>
+  </article>
+);
 
 const Testimonials = () => {
-  // Duplicate testimonials for seamless loop
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
-  return <section className="py-20 lg:py-32 bg-primary overflow-hidden">
-    <div className="container-custom section-padding">
-      {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
-        <div>
-          <FadeIn>
-            <p className="text-tertiary font-medium mb-4 uppercase tracking-widest text-sm">Testimonials</p>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <h2 className="text-white">
-              What Cheshire
-              <br />
-              Customers Say
-            </h2>
-          </FadeIn>
-        </div>
-        <FadeIn delay={200}>
-          <p className="text-white max-w-xl mt-6 lg:mt-0">
-            Homeowners and businesses across Cheshire, Wirral and Ellesmere Port choose us because we treat every spray job — large or small — with the same workshop-grade care.
-          </p>
-        </FadeIn>
-      </div>
-    </div>
+  const duplicatedThemes = [...feedbackThemes, ...feedbackThemes];
 
-    {/* Marquee Row 1 - Slides Left */}
-    <FadeIn delay={300}>
-      <div className="relative mb-4">
-        <div className="flex gap-4 animate-marquee-left w-max">
-          {duplicatedTestimonials.map((testimonial, index) => <TestimonialCard key={`row1-${index}`} {...testimonial} />)}
+  return (
+    <section className="overflow-hidden bg-primary py-20 lg:py-32">
+      <div className="container-custom section-padding">
+        <div className="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <FadeIn>
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-tertiary">Why people call back</p>
+              <h2 className="text-white">
+                What Leeds customers
+                <br />
+                value most
+              </h2>
+            </FadeIn>
+          </div>
+          <FadeIn delay={200}>
+            <p className="mt-6 max-w-xl text-white lg:mt-0">
+              Public feedback consistently mentions quick attendance, clear explanations, fair prices, tidy work and repeat use.
+            </p>
+          </FadeIn>
         </div>
       </div>
-    </FadeIn>
 
-    {/* Marquee Row 2 - Slides Right */}
-    <FadeIn delay={400} className="hidden md:block">
-      <div className="relative">
-        <div className="flex gap-4 animate-marquee-right w-max">
-          {duplicatedTestimonials.map((testimonial, index) => <TestimonialCard key={`row2-${index}`} {...testimonial} />)}
+      <FadeIn delay={300}>
+        <div className="relative">
+          <div className="flex w-max gap-4 animate-marquee-left">
+            {duplicatedThemes.map((theme, index) => (
+              <FeedbackCard key={`${theme.title}-${index}`} {...theme} />
+            ))}
+          </div>
         </div>
-      </div>
-    </FadeIn>
-  </section>;
+      </FadeIn>
+    </section>
+  );
 };
+
 export default Testimonials;

@@ -47,7 +47,7 @@ const ServiceDetail = () => {
   // Form state
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
-  const [selectedService, setSelectedService] = useState(slug || services[0].slug);
+  const [selectedService, setSelectedService] = useState(service?.slug || services[0].slug);
   const [note, setNote] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -125,7 +125,7 @@ const ServiceDetail = () => {
 
           <FadeIn>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-4">
-              <h2 className="text-black text-5xl md:text-7xl font-bold">{service.title}</h2>
+              <h1 className="text-black text-5xl md:text-7xl font-bold">{service.title}</h1>
               <Link to="/quote">
                 <FlipButton variant="primary">Get A Quote</FlipButton>
               </Link>
@@ -156,8 +156,8 @@ const ServiceDetail = () => {
             {/* Left - About Content */}
             <div className="w-full max-w-[640px]">
               <FadeIn>
-                <p className="text-primary font-semibold mb-4">Service Details</p>
-                <h3 className="text-4xl md:text-5xl font-bold text-black mb-6">About this Service</h3>
+                <p className="text-primary font-semibold mb-4">Service details</p>
+                <h3 className="text-4xl md:text-5xl font-bold text-black mb-6">About this service</h3>
               </FadeIn>
 
               <FadeIn delay={100}>
@@ -185,7 +185,7 @@ const ServiceDetail = () => {
                     <p className="text-primary font-bold mb-4">Working Process</p>
                     <h3 className="text-4xl md:text-5xl font-bold text-black mb-4">How We Work</h3>
                     <p className="text-muted-foreground max-w-2xl mb-12">
-                      Every project follows a clear, no-surprises process — from your first enquiry right through to the finished result.
+                      Every job follows a clear process from your first enquiry through to the finished repair.
                     </p>
                   </FadeIn>
 
@@ -217,7 +217,7 @@ const ServiceDetail = () => {
                         <p className="text-primary font-bold mb-4">Benefits</p>
                         <h3 className="text-3xl md:text-5xl font-bold text-black mb-6">Service Benefits</h3>
                         <p className="text-muted-foreground font-medium mb-8">
-                          A professional spray finish offers a practical, cost-effective way to refresh and protect your surfaces.
+                          Good plumbing work should solve the fault, protect the property and leave you clear about what happens next.
                         </p>
                       </FadeIn>
 

@@ -3,88 +3,79 @@ import { services } from "@/data/services";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// FlipButton component
-const FlipButton = ({
-  children
-}: {
-  children: React.ReactNode;
-}) => {
-  return <button className="group relative px-8 py-4 bg-white border-primary rounded-full overflow-hidden border">
-    <span className="relative block overflow-hidden h-6">
-      <span className="block transition-transform duration-300 group-hover:-translate-y-full text-primary font-semibold">
-        {children}
+const FlipButton = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <button className="group relative overflow-hidden rounded-full border border-primary bg-white px-8 py-4">
+      <span className="relative block h-6 overflow-hidden">
+        <span className="block font-semibold text-primary transition-transform duration-300 group-hover:-translate-y-full">
+          {children}
+        </span>
+        <span className="absolute left-0 top-full block font-semibold text-primary transition-transform duration-300 group-hover:-translate-y-full">
+          {children}
+        </span>
       </span>
-      <span className="absolute top-full left-0 block transition-transform duration-300 group-hover:-translate-y-full text-primary font-semibold">
-        {children}
-      </span>
-    </span>
-  </button>;
+    </button>
+  );
 };
 
 const Services = () => {
-  return <section id="services" className="bg-background py-20 lg:py-32">
-    <div className="container-custom section-padding">
-      <div className="grid lg:grid-cols-2 gap-16 items-start relative">
-        {/* Left Column - Sticky */}
-        <div className="lg:sticky lg:top-32">
-          <FadeIn>
-            <p className="text-tertiary font-bold mb-4 uppercase tracking-widest text-sm">Our Services</p>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <h2 className="text-black mb-6 text-3xl md:text-5xl lg:text-6xl">
-              <span className="relative inline-block">
-                <span className="relative z-10">Specialist Spray</span>
-              </span>
-              <br />
-              Finishes
-            </h2>
-          </FadeIn>
-          <FadeIn delay={200}>
-            <p className="text-muted-foreground mb-8 max-w-md text-base">
-              From kitchen cabinets to commercial shop fronts, we deliver a flawless sprayed finish on almost any surface — domestic, commercial or industrial — across Cheshire and Ellesmere Port.
-            </p>
-          </FadeIn>
+  return (
+    <section id="services" className="bg-background py-20 lg:py-32">
+      <div className="container-custom section-padding">
+        <div className="relative grid items-start gap-16 lg:grid-cols-2">
+          <div className="lg:sticky lg:top-32">
+            <FadeIn>
+              <p className="mb-4 text-sm font-bold uppercase tracking-widest text-tertiary">Our services</p>
+              <h2 className="mb-6 text-3xl text-black md:text-5xl lg:text-6xl">
+                <span className="relative inline-block">
+                  <span className="relative z-10">Plumbing</span>
+                </span>
+                <br />
+                That Works
+              </h2>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="mb-8 max-w-md text-base text-muted-foreground">
+                From emergency repairs and leaks to blocked drains, bathrooms, radiators and water systems, we provide practical plumbing support across Leeds.
+              </p>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <Link to="/services">
+                <FlipButton>View All Services</FlipButton>
+              </Link>
+            </FadeIn>
+          </div>
 
-          <FadeIn delay={300}>
-            <Link to="/services">
-              <FlipButton>See All Services</FlipButton>
-            </Link>
-          </FadeIn>
-        </div>
-
-        {/* Right Column - Cards */}
-        <div className="space-y-4">
-          {services.map((service, index) => <FadeIn key={index} delay={index * 100}>
-            <Link to={`/services/${service.slug}`}>
-              <div className="group px-5 md:px-12 py-[41px] rounded-2xl cursor-pointer transition-all duration-500 bg-white hover:bg-tertiary">
-                <div className="flex items-start gap-3 md:gap-6 px-0">
-                  {/* Number Circle */}
-                  <div className="w-12 h-12 rounded-full border flex items-center justify-center flex-shrink-0 transition-colors duration-500 border-primary text-primary">
-                    <span className="font-medium">{service.number}</span>
+          <div className="space-y-4">
+            {services.map((service, index) => (
+              <FadeIn key={service.slug} delay={index * 100}>
+                <Link to={`/services/${service.slug}`}>
+                  <div className="group cursor-pointer rounded-2xl bg-white px-5 py-8 transition-all duration-500 hover:bg-tertiary md:px-12">
+                    <div className="flex items-start gap-3 md:gap-6">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary text-primary transition-colors duration-500">
+                        <span className="font-medium">{service.number}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="mb-2 text-2xl font-bold text-primary transition-colors duration-500 md:text-3xl">
+                          {service.title}
+                        </h3>
+                        <p className="text-lg font-medium text-muted-foreground transition-colors duration-500 group-hover:text-primary/80">
+                          {service.description}
+                        </p>
+                      </div>
+                      <div className="flex h-10 w-10 shrink-0 translate-x-2 -translate-y-5 items-center justify-center rounded-full bg-primary opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
+                        <ArrowUpRight className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h5 className="mb-2 text-3xl font-bold transition-colors duration-500 text-primary group-hover:text-primary">
-                      {service.title}
-                    </h5>
-
-                    <p className="text-lg font-medium transition-colors duration-500 text-muted-foreground group-hover:text-primary/80">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Arrow - only visible on hover */}
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 transition-all duration-500 opacity-0 -translate-y-5 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
-                    <ArrowUpRight className="h-5 w-5 text-white" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </FadeIn>)}
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  </section>;
+    </section>
+  );
 };
+
 export default Services;

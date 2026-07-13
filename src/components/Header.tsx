@@ -118,7 +118,7 @@ const Header = ({
           {navLinks.map(link => <FlipLink key={link.name} hasDropdown={link.hasDropdown} href={link.href} isRoute={link.isRoute} onClick={link.hasDropdown ? handlePagesClick : undefined} isActive={link.hasDropdown && isPagesDropdownOpen} isDark={isDark}>
             {link.name}
           </FlipLink>)}
-          {/* Overflow nav — secondary pages */}
+          {/* Overflow nav - secondary pages */}
           <div className="relative">
             <button
               onClick={handlePagesClick}
