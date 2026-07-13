@@ -48,8 +48,8 @@ const About = () => {
               </div>
               <div className="absolute -bottom-12 -right-12 hidden h-[240px] w-[240px] overflow-hidden rounded-xl text-white lg:block">
                 <img
-                  src="/images/plumbing/support-clean-handover.webp"
-                  alt="Plumber checking a completed repair"
+                  src="/images/plumbing/support-basin-inspection.webp"
+                  alt="Plumber inspecting pipework beneath a bathroom basin"
                   className="h-full w-full object-cover"
                 />
               </div>
