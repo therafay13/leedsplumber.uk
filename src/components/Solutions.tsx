@@ -3,7 +3,6 @@ import teamPlumber from "@/assets/hero-51.png";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const FlipButton = ({
   children
@@ -70,11 +69,11 @@ const About = () => {
           </div>
 
 
-          <Link to="tel:+447882395895">
+          <a href="tel:+441134182075">
             <FadeIn delay={600}>
-              <FlipButton>Call 07882 395895</FlipButton>
+              <FlipButton>Call 0113 418 2075</FlipButton>
             </FadeIn>
-          </Link>
+          </a>
         </div>
         {/* Left - Image */}
         <FadeIn className="order-1 lg:order-2 h-[90%]">

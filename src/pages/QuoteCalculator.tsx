@@ -115,7 +115,7 @@ const QuoteCalculator = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Calculator Form */}
             <FadeIn>
-              <div className="bg-[#f3f3f6] sticky top-6 h-max rounded-2xl p-5 md:p-8 shadow-sm">
+              <div className="bg-card sticky top-6 h-max rounded-2xl p-5 md:p-8 shadow-sm">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <Calculator className="w-6 h-6 text-primary" />
@@ -327,7 +327,7 @@ const QuoteCalculator = () => {
                 </div>
 
                 {/* Service Price List */}
-                <div className="bg-[#f3f3f6] rounded-2xl p-6 shadow-sm">
+                <div className="bg-card rounded-2xl p-6 shadow-sm">
                   <h3 className="font-bold text-lg mb-4 text-black">Base Hourly Rates</h3>
                   <div className="space-y-3">
                     {services.map((s) => (
@@ -365,7 +365,7 @@ const QuoteCalculator = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <FadeIn delay={100}>
-              <div className="bg-[#f3f3f6] h-full rounded-2xl p-8 text-center">
+              <div className="bg-card h-full rounded-2xl p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-tertiary/15 flex items-center justify-center mx-auto mb-4">
                   <Wrench className="w-8 h-8 text-tertiary" />
                 </div>
@@ -378,7 +378,7 @@ const QuoteCalculator = () => {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="bg-[#f3f3f6] h-full rounded-2xl p-8 text-center">
+              <div className="bg-card h-full rounded-2xl p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-tertiary/15 flex items-center justify-center mx-auto mb-4">
                   <Calculator className="w-8 h-8 text-tertiary" />
                 </div>
@@ -390,7 +390,7 @@ const QuoteCalculator = () => {
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="bg-[#f3f3f6] h-full rounded-2xl p-8 text-center">
+              <div className="bg-card h-full rounded-2xl p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-tertiary/15 flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-tertiary" />
                 </div>

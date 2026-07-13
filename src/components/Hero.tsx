@@ -5,6 +5,7 @@ import heroGrid4 from "@/assets/hero-grid-4.jpg";
 import heroGrid5 from "@/assets/hero-grid-5.jpg";
 import heroGrid6 from "@/assets/hero-grid-6.jpg";
 import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 const FlipButton = ({
   children,
@@ -14,8 +15,8 @@ const FlipButton = ({
   variant?: "light" | "dark";
 }) => {
   const bgClass = variant === "light"
-    ? "bg-tertiary text-primary hover:bg-tertiary/90"
-    : "bg-primary text-white border border-accent text-accent";
+    ? "bg-tertiary text-white hover:bg-tertiary/90"
+    : "bg-primary text-white border border-white/40 hover:bg-secondary";
   return (
     <Button size="default" className={`group relative overflow-hidden font-semibold rounded-full px-6 ${bgClass}`}>
       <span className="flex items-center gap-2 font-bold transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
@@ -64,33 +65,30 @@ const Hero = () => {
         <div className="max-w-7xl lg:min-w-[700px] relative z-10 pb-8 lg:pb-16">
           <div className="animate-fade-up">
             <h1 className="text-white font-bold mb-6 text-5xl md:text-6xl lg:text-7xl leading-[1.1] max-w-[800px] text-left xl:text-7xl">
-              Spray Painting Specialists
+              Emergency Plumbing
               <br />
-              Cheshire &amp; Ellesmere Port,
-              <br />
-              <span className="text-tertiary">Reborn, Not Replaced.</span>
+              <span className="text-tertiary">Across Leeds</span>
             </h1>
           </div>
 
           <p style={{
             animationDelay: "0.1s"
           }} className="text-white text-lg mb-8 max-w-[800px] animate-fade-up md:text-base">
-            Kitchen resprays, uPVC windows and doors, fascias, garage doors and commercial
-            coatings — flawless factory-grade finishes applied on-site or in our workshop
-            for a fraction of the cost of replacement.
+            24 hours a day, 365 days a year. Emergency repairs, blocked drains, leaks, bathrooms, and heating.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-12 animate-fade-up" style={{
             animationDelay: "0.2s"
           }}>
             <Link to="/quote">
-              <FlipButton>Get A Quote</FlipButton>
+              <FlipButton>Get A Free Quote</FlipButton>
             </Link>
-            <Link to="/services">
+            <a href="tel:+441134182075">
               <FlipButton variant="dark">
-                See All Services
+                <Phone />
+                Call 0113 418 2075
               </FlipButton>
-            </Link>
+            </a>
           </div>
 
           {/* Client Stats */}
@@ -101,14 +99,13 @@ const Hero = () => {
               <div className="w-1 bg-tertiary rounded-full self-stretch mr-4" />
               <div className="flex items-center">
                 <div>
-                  <p className="text-white text-3xl font-bold">25+</p>
-                  <p className="text-white/60 text-xs mt-1">Years Serving Cheshire</p>
+                  <p className="text-white text-3xl font-bold">24/7</p>
+                  <p className="text-white/60 text-xs mt-1">Emergency support</p>
                 </div>
                 <div className="w-px bg-white/20 self-stretch mx-6" />
-                {/* UNVERIFIED: "1,200+" is a marketing claim, not a measured figure — confirm the real project count with the client before launch. */}
                 <div>
-                  <p className="text-white text-3xl font-bold">1,200+</p>
-                  <p className="text-white/60 text-xs mt-1">Projects Sprayed</p>
+                  <p className="text-white text-3xl font-bold">£0</p>
+                  <p className="text-white/60 text-xs mt-1">Call-out charge</p>
                 </div>
               </div>
             </div>

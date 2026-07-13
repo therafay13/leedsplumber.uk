@@ -253,7 +253,7 @@ const ServiceDetail = () => {
             {/* Right - Contact Form */}
             <div className="flex sticky top-10 h-fit justify-end">
               <FadeIn className="w-[460px]" delay={300}>
-                <div className="bg-[#f4f4f7]  p-8 rounded-xl">
+                <div className="bg-card p-8 rounded-xl">
                   <h4 className="text-3xl font-bold text-black mb-6">Get In Touch</h4>
 
                   <form className="space-y-8" onSubmit={handleSubmit}>

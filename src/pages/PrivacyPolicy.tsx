@@ -39,10 +39,10 @@ const PrivacyPolicy = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Cheshire Spraying Specialists is a spray painting and surface coating business based in Neston, Cheshire. We operate across Cheshire and the surrounding area, providing kitchen resprays, uPVC spraying, garage door resprays, fascia and soffit coatings, and commercial spray painting services. This privacy policy explains how we collect, use, and protect your personal information when you use this website or contact us for a quote.
+                    John McGinty Plumbing Services, trading as Leeds Plumber UK, is a plumbing and drainage business based at 51 Whinmoor Crescent, Leeds, LS14 1NJ. We operate across Leeds, providing emergency plumbing, repairs, drainage, bathrooms, radiators, showers, pumps, and related services. This privacy policy explains how we collect, use, and protect your personal information when you use this website or contact us for a quote.
                   </p>
                   <p>
-                    If you have any questions about this policy, contact us at: cheshiresprayingspecialists@gmail.com or by calling 07882 395895.
+                    If you have any questions about this policy, contact Leeds Plumber UK by calling 0113 418 2075.
                   </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    When you submit an enquiry, request a quote, or contact us through this website, we collect the information you provide in the form — typically your name, phone number, email address, and details about the work you require. We do not collect payment card details through this website.
+                    When you submit an enquiry, request a quote, or contact us through this website, we collect the information you provide in the form, typically your name, phone number, email address, and details about the work you require. We do not collect payment card details through this website.
                   </p>
                   <p>
                     We may also receive basic technical information about your visit, such as your browser type and the pages you viewed, but this is not linked to your personal identity.
@@ -113,7 +113,7 @@ const PrivacyPolicy = () => {
                     Under UK data protection law, you have the right to access the personal information we hold about you, to request that we correct inaccurate information, and to request deletion of your information. You also have the right to object to certain uses of your information.
                   </p>
                   <p>
-                    To exercise any of these rights, contact us at cheshiresprayingspecialists@gmail.com. We will respond within one calendar month.
+                    To exercise any of these rights, contact us by calling 0113 418 2075. We will respond within one calendar month.
                   </p>
                 </div>
               </div>
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    If you believe we have not handled your personal information correctly, you have the right to make a complaint to the Information Commissioner's Office (ICO) — the UK regulator for data protection. You can contact the ICO at ico.org.uk or by calling 0303 123 1113.
+                    If you believe we have not handled your personal information correctly, you have the right to make a complaint to the Information Commissioner's Office (ICO), the UK regulator for data protection. You can contact the ICO at ico.org.uk or by calling 0303 123 1113.
                   </p>
                 </div>
               </div>

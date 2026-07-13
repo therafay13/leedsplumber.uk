@@ -30,7 +30,7 @@ const Services = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => <FadeIn key={index} delay={index * 100}>
             <Link to={`/services/${service.slug}`}>
-              <div className="group cursor-pointer transition-all bg-[#f3f3f6] rounded-xl hover:bg-primary h-full px-[30px] py-[28px] duration-300">
+              <div className="group cursor-pointer transition-all bg-card rounded-xl hover:bg-primary h-full px-[30px] py-[28px] duration-300">
                 {/* Image */}
                 <div className="overflow-hidden mb-6 rounded-md min-h-[340px] max-h-[340px]">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-md" />

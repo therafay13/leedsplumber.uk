@@ -31,7 +31,7 @@ const FlipButton = ({
 
 const CTA = () => {
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-white">
+    <section id="contact" className="bg-background py-20 lg:py-32">
       <div className="container-custom section-padding">
         <FadeIn>
           <div className="grid lg:grid-cols-3 gap-6">
@@ -47,8 +47,8 @@ const CTA = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/65 to-transparent" />
               {/* Content */}
               <div className="relative z-10 p-8 lg:p-12 flex flex-col justify-center h-full max-w-md">
-                  <p className="text-tertiary text-sm font-medium mb-3 uppercase tracking-widest">Ready to refresh, not replace?</p>
-                  <h2 className="text-white mb-8">Let's spray your project.</h2>
+                  <p className="mb-3 text-sm font-medium uppercase tracking-widest text-tertiary">Need a plumber now?</p>
+                  <h2 className="mb-8 text-white">Let us get things flowing again.</h2>
                 <div>
                   <Link to="/quote">
                     <FlipButton variant="light">Get A Quote</FlipButton>
@@ -65,12 +65,12 @@ const CTA = () => {
               </div>
               {/* Text */}
               <p className="text-white font-semibold text-xl leading-relaxed mb-8">
-                Speak directly with the team at Cheshire Spraying Specialists — we'll talk through your project and book a free site visit.
+                Speak directly with Leeds Plumber UK about an emergency repair, drainage issue, or planned plumbing work.
               </p>
               {/* Button */}
-              <Link to="tel:+447882395895">
-                <FlipButton variant="light">Call 07882 395895</FlipButton>
-              </Link>
+              <a href="tel:+441134182075">
+                <FlipButton variant="light">Call 0113 418 2075</FlipButton>
+              </a>
             </div>
           </div>
         </FadeIn>

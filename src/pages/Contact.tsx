@@ -14,7 +14,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
 import { supabase } from "@/integrations/supabase/client";
-import { Clock, PoundSterling, Mail, MapPin, Phone, Wrench } from "lucide-react";
+import { Clock, MapPin, Phone, PoundSterling, Wrench } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
@@ -22,25 +22,25 @@ import type { QuoteData } from "./QuoteCalculator";
 
 const contactInfo = [
   {
-    icon: Mail,
-    title: "Email Us",
-    description: "We reply within one working day",
-    value: "cheshiresprayingspecialists@gmail.com",
-    href: "mailto:cheshiresprayingspecialists@gmail.com",
+    icon: Phone,
+    title: "Call Us",
+    description: "24 hours a day, 365 days a year",
+    value: "0113 418 2075",
+    href: "tel:+441134182075",
   },
   {
     icon: MapPin,
-    title: "Service Area",
-    description: "Free site visits across the region",
-    value: "Ellesmere Port & all of Cheshire",
-    href: "https://www.google.com/maps?q=Unit+23+Clayhill+Industrial+Estate+Neston+CH64+3RU",
+    title: "Our Address",
+    description: "Serving homes and businesses across Leeds",
+    value: "51 Whinmoor Crescent, Leeds, LS14 1NJ",
+    href: "https://www.google.com/maps?q=51+Whinmoor+Crescent+Leeds+LS14+1NJ",
   },
   {
-    icon: Phone,
-    title: "Call Us",
-    description: "Speak to the team direct",
-    value: "07882 395895 / 07746 476414",
-    href: "tel:+447882395895",
+    icon: Clock,
+    title: "Free Quotes",
+    description: "No call-out charge and charges from arrival",
+    value: "Request a quote",
+    href: "/quote",
   },
 ];
 
@@ -166,14 +166,14 @@ const Contact = () => {
               <span className="text-primary">Contact</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
-              {quoteData ? "Request Official Quote" : planData ? "Plan Inquiry" : "Contact Us"}
+              {quoteData ? "Request a Free Quote" : planData ? "Plan Inquiry" : "Contact Leeds Plumber UK"}
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               {quoteData
                 ? "Complete your information below and we'll send you an official quote based on your estimate."
                 : planData
                   ? "Fill in your details and we'll contact you about the selected plan."
-                  : "Get in touch with our team for any questions or to schedule a service."}
+                  : "Call 0113 418 2075 for emergency help or request a free quote for planned plumbing work."}
             </p>
           </FadeIn>
         </div>
@@ -256,7 +256,7 @@ const Contact = () => {
               </div>
 
               {/* Form */}
-              <div className="bg-[#f4f4f7] rounded-2xl p-8">
+              <div className="bg-card rounded-2xl p-8">
                 <h2 className="text-3xl font-bold text-black mb-6">
                   {quoteData || planData ? "Your Information" : "Get In Touch"}
                 </h2>
@@ -280,7 +280,7 @@ const Contact = () => {
                     </label>
                     <Input
                       type="tel"
-                      placeholder="07882 395895"
+                      placeholder="0113 418 2075"
                       className="bg-transparent border-border"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -364,7 +364,7 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-[#f4f4f7] rounded-2xl p-6"
+                    className="bg-card rounded-2xl p-6"
                 >
                   <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
                     <info.icon className="w-5 h-5 text-primary" />

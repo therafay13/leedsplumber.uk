@@ -291,7 +291,7 @@ const WorkDetail = () => {
             {/* Right Sidebar */}
             <div className="lg:col-span-1 min-w-[460px] -translate-x-[55px]">
               <FadeIn delay={300}>
-                <div className="bg-[#f4f4f7] rounded-2xl p-8 shadow-sm">
+                <div className="bg-card rounded-2xl p-8 shadow-sm">
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <span className="text-black text-2xl font-bold">Client</span>

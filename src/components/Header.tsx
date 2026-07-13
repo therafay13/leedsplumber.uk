@@ -32,13 +32,13 @@ const FlipLink = ({
   isDark?: boolean;
 }) => {
   const content = <>
-    <span className={`block transition-transform duration-300 group-hover:-translate-y-full ${isDark ? 'text-white' : 'text-[#595B67]'}`}>
+    <span className={`block transition-transform duration-300 group-hover:-translate-y-full ${isDark ? 'text-white' : 'text-foreground/80'}`}>
       {children}
     </span>
-    <span className={`absolute inset-0 flex items-center transition-transform duration-300 translate-y-full group-hover:translate-y-0 ${isDark ? 'text-white' : 'text-[#595B67]'}`}>
+    <span className={`absolute inset-0 flex items-center transition-transform duration-300 translate-y-full group-hover:translate-y-0 ${isDark ? 'text-white' : 'text-foreground/80'}`}>
       {children}
     </span>
-    {hasDropdown && <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-300 ${isActive ? 'rotate-180' : ''} ${isDark ? 'text-white' : 'text-[#595B67]'} `} />}
+    {hasDropdown && <ChevronDown className={`h-4 w-4 ml-1 transition-transform duration-300 ${isActive ? 'rotate-180' : ''} ${isDark ? 'text-white' : 'text-foreground/80'} `} />}
   </>;
   if (hasDropdown) {
     return <button onClick={onClick} className={`group relative overflow-hidden flex items-center gap-1 transition-colors duration-300 font-bold h-6`}>
@@ -66,10 +66,10 @@ const DropdownFlipLink = ({
   isDark?: boolean;
 }) => {
   return <Link to={href} onClick={onClick} className="group relative overflow-hidden flex items-center text-primary hover:text-primary transition-colors duration-300 font-medium h-6">
-    <span className={`block transition-transform duration-300 group-hover:-translate-y-full ${isDark ? 'text-[#595B67]' : 'text-white'}`}>
+    <span className={`block transition-transform duration-300 group-hover:-translate-y-full ${isDark ? 'text-foreground/80' : 'text-white'}`}>
       {children}
     </span>
-    <span className={`absolute inset-0 flex items-center transition-transform duration-300 translate-y-full group-hover:translate-y-0 ${isDark ? 'text-[#595B67]' : 'text-white'}`}>
+    <span className={`absolute inset-0 flex items-center transition-transform duration-300 translate-y-full group-hover:translate-y-0 ${isDark ? 'text-foreground/80' : 'text-white'}`}>
       {children}
     </span>
   </Link>;
@@ -83,7 +83,7 @@ const FlipButton = ({
   isDark?: boolean;
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }) => {
-  return <Button variant="nav-cta" size="default" className={`group relative overflow-hidden ${isDark ? '' : 'bg-white border-secondary text-black'}`} {...props}>
+  return <Button variant="nav-cta" size="default" className={`group relative overflow-hidden ${isDark ? 'border-white/40 text-white hover:bg-white/10' : 'bg-white border-secondary text-primary hover:bg-primary/5'}`} {...props}>
     <span className="flex items-center gap-2 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
       {children}
     </span>
@@ -106,7 +106,7 @@ const Header = ({
     setIsPagesDropdownOpen(false);
   };
 
-  return <header className={`relative z-50 backdrop-blur-md bg-primary ${isDark ? 'bg-opacity-0' : 'bg-white'}`}>
+  return <header className={`relative z-50 backdrop-blur-md ${isDark ? 'bg-primary/95' : 'bg-white'}`}>
     <div className="container">
       <div className="flex items-center justify-between h-20">
         <Link to="/">
@@ -122,12 +122,14 @@ const Header = ({
           <div className="relative">
             <button
               onClick={handlePagesClick}
-              className={`group flex items-center justify-center w-8 h-8 rounded-full transition-colors ${isPagesDropdownOpen ? 'bg-white/15' : ''} ${isDark ? 'text-white hover:bg-white/10' : 'text-[#595B67] hover:bg-black/5'}`}
+              aria-label="Open more pages"
+              aria-expanded={isPagesDropdownOpen}
+              className={`group flex items-center justify-center w-8 h-8 rounded-full transition-colors ${isPagesDropdownOpen ? 'bg-white/15' : ''} ${isDark ? 'text-white hover:bg-white/10' : 'text-foreground/80 hover:bg-primary/5'}`}
             >
               <MoreHorizontal className="h-5 w-5" />
             </button>
             <div className={`absolute right-0 top-full mt-3 w-56 transition-all duration-200 ${isPagesDropdownOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-2'}`}>
-              <div className="rounded-2xl overflow-hidden border border-white/8 shadow-2xl" style={{ background: 'hsl(240 6% 16%)' }}>
+              <div className="rounded-2xl overflow-hidden border border-white/8 bg-primary shadow-2xl">
                 <div className="p-2 flex flex-col">
                   {overflowLinks.map(link => (
                     <Link
@@ -146,27 +148,33 @@ const Header = ({
         </nav>
         <div className="hidden lg:flex gap-3">
           {/* CTA Button & Cart */}
-          <Link to="tel:+447882395895" className="hidden lg:flex">
+          <a href="tel:+441134182075" className="hidden lg:flex">
             <FlipButton isDark={isDark}>
               <Phone className="h-4 w-4" />
-              Call 07882 395895</FlipButton>
-          </Link>
+              Call 0113 418 2075</FlipButton>
+          </a>
         </div>
 
 
         {/* Mobile Menu Button */}
-        <button className={`lg:hidden ${isDark ? 'text-white' : 'text-[#595B67]'}`} onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className={`lg:hidden ${isDark ? 'text-white' : 'text-foreground/80'}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+        >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && <div className="lg:hidden py-4 border-t border-white/10">
+      {isOpen && <div id="mobile-navigation" className="lg:hidden py-4 border-t border-white/10">
         <nav className="flex flex-col gap-4">
-          {navLinks.map(link => link.isRoute ? <Link key={link.name} to={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-[#595B67]/80'} hover:text-[#595B67] transition-colors duration-300 text-sm font-medium py-2`}>
+          {navLinks.map(link => link.isRoute ? <Link key={link.name} to={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-foreground/80'} hover:text-foreground transition-colors duration-300 text-sm font-medium py-2`}>
             {link.name}
             {link.hasDropdown && <ChevronDown className="h-4 w-4" />}
-          </Link> : <a key={link.name} href={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-[#595B67]/80'} hover:text-[#595B67] transition-colors duration-300 text-sm font-medium py-2`}>
+          </Link> : <a key={link.name} href={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-foreground/80'} hover:text-foreground transition-colors duration-300 text-sm font-medium py-2`}>
             {link.name}
             {link.hasDropdown && <ChevronDown className="h-4 w-4" />}
           </a>)}
@@ -176,15 +184,17 @@ const Header = ({
               key={link.name}
               to={link.href}
               onClick={() => setIsOpen(false)}
-              className={`flex items-center gap-1 ${isDark ? 'text-white/70' : 'text-[#595B67]/70'} hover:text-[#595B67] transition-colors text-sm font-medium py-2`}
+              className={`flex items-center gap-1 ${isDark ? 'text-white/70' : 'text-foreground/70'} hover:text-foreground transition-colors text-sm font-medium py-2`}
             >
               {link.name}
             </Link>
           ))}
-          <Button variant="hero" size="default" className="mt-4">
-            <Phone className="h-4 w-4 mr-2" />
-            Call 07882 395895
-          </Button>
+          <a href="tel:+441134182075" className="mt-4">
+            <Button variant="hero" size="default" className="w-full">
+              <Phone className="h-4 w-4 mr-2" />
+              Call 0113 418 2075
+            </Button>
+          </a>
         </nav>
       </div>}
     </div>

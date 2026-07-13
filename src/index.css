@@ -4,59 +4,59 @@
 
 @layer base {
   :root {
-    /* Cheshire Spray — Industrial Charcoal & Ember */
-    --background: 240 6% 6%;          /* #0f0f10 deep charcoal */
-    --foreground: 0 0% 100%;
+    /* Leeds Plumber UK: pale blue, navy, indigo and red */
+    --background: 210 50% 94%;        /* #E7EFF7 pale blue */
+    --foreground: 232 33% 26%;        /* #2C3258 navy */
 
-    --card: 240 6% 96%;
-    --card-foreground: 240 6% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 232 33% 26%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 6% 10%;
+    --popover-foreground: 232 33% 26%;
 
-    --primary: 240 6% 11%;            /* #1c1c1f charcoal */
+    --primary: 232 33% 26%;           /* #2C3258 navy */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 24%;          /* #3a3a3f mid charcoal */
+    --secondary: 232 33% 39%;          /* #424B84 indigo */
     --secondary-foreground: 0 0% 100%;
 
-    --tertiary: 14 78% 57%;           /* #e85d3a ember */
+    --tertiary: 0 100% 43%;             /* #DD0000 red */
     --tertiary-foreground: 0 0% 100%;
 
-    --muted: 240 4% 40%;
-    --muted-foreground: 240 4% 35%;
+    --muted: 210 30% 89%;
+    --muted-foreground: 232 22% 37%;
 
-    --accent: 16 100% 65%;            /* #ff7a4d bright ember */
-    --accent-foreground: 240 6% 6%;
+    --accent: 0 100% 43%;              /* #DD0000 red */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 85%;
-    --input: 240 6% 85%;
-    --ring: 14 78% 57%;
+    --border: 231 31% 77%;             /* #B2B7D6 lavender */
+    --input: 231 31% 77%;
+    --ring: 0 100% 43%;
 
     --radius: 0.5rem;
 
     /* Custom Colors */
-    --grey: 240 4% 30%;
-    --text-grey: 240 4% 35%;
+    --grey: 233 22% 59%;               /* #8287AD muted indigo */
+    --text-grey: 232 22% 37%;
     --white: 0 0% 100%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(
       135deg,
-      hsl(240 6% 6%),
-      hsl(240 6% 18%)
+      hsl(var(--primary)),
+      hsl(var(--secondary))
     );
     --gradient-accent: linear-gradient(
       135deg,
       hsl(var(--tertiary)),
-      hsl(16 100% 65%)
+      hsl(var(--secondary))
     );
 
     /* Shadows */
-    --shadow-card: 0 10px 40px -10px hsl(240 6% 0% / 0.5);
+    --shadow-card: 0 10px 40px -10px hsl(var(--primary) / 0.18);
     --shadow-glow: 0 0 30px hsl(var(--tertiary) / 0.45);
 
     /* Sidebar */
@@ -67,29 +67,29 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 14 78% 57%;
+    --sidebar-ring: 0 100% 43%;
   }
 
   .dark {
-    --background: 240 6% 6%;
+    --background: 232 33% 26%;
     --foreground: 0 0% 100%;
-    --card: 240 6% 9%;
+    --card: 232 28% 31%;
     --card-foreground: 0 0% 100%;
-    --popover: 240 6% 9%;
+    --popover: 232 28% 31%;
     --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 6% 6%;
-    --secondary: 240 4% 24%;
+    --primary: 232 33% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 232 33% 39%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 240 4% 40%;
-    --muted-foreground: 240 4% 65%;
-    --accent: 16 100% 65%;
-    --accent-foreground: 240 6% 6%;
+    --muted: 232 20% 42%;
+    --muted-foreground: 231 31% 77%;
+    --accent: 0 100% 43%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 35%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 6% 20%;
-    --input: 240 6% 20%;
-    --ring: 14 78% 57%;
+    --border: 233 22% 59%;
+    --input: 233 22% 59%;
+    --ring: 0 100% 43%;
   }
 }
 
@@ -188,7 +188,7 @@
   }
 
   .hover-glow {
-    @apply transition-shadow duration-300 hover:shadow-[0_0_30px_hsl(78_100%_47%_/_0.3)];
+    @apply transition-shadow duration-300 hover:shadow-[0_0_30px_hsl(0_100%_43%_/_0.25)];
   }
 }
 

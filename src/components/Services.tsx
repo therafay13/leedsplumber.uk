@@ -22,7 +22,7 @@ const FlipButton = ({
 };
 
 const Services = () => {
-  return <section id="services" className="py-20 lg:py-32 bg-[#ebebeb]">
+  return <section id="services" className="bg-background py-20 lg:py-32">
     <div className="container-custom section-padding">
       <div className="grid lg:grid-cols-2 gap-16 items-start relative">
         {/* Left Column - Sticky */}
