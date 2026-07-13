@@ -82,7 +82,7 @@ const FlipButton = ({
   isDark?: boolean;
   props?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }) => {
-  return <Button variant="nav-cta" size="default" className={`group relative overflow-hidden ${isDark ? 'border-white/40 text-white hover:bg-white/10' : 'bg-white border-secondary text-primary hover:bg-primary/5'}`} {...props}>
+  return <Button variant="nav-cta" size="default" className={`group relative overflow-hidden ${isDark ? 'border-white/40 text-white hover:border-tertiary hover:bg-tertiary hover:text-white' : 'bg-white border-secondary text-primary hover:border-tertiary hover:bg-tertiary hover:text-white'}`} {...props}>
     <span className="flex items-center gap-2 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
       {children}
     </span>

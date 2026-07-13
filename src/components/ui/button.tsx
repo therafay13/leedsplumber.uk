@@ -20,7 +20,7 @@ const buttonVariants = cva(
         "accent-outline": "border-2 border-tertiary text-tertiary bg-transparent hover:bg-tertiary hover:text-tertiary-foreground font-semibold",
         hero: "bg-tertiary text-primary font-semibold hover:shadow-glow hover:scale-105",
         "hero-outline": "border-2 border-white/30 text-white bg-transparent hover:bg-white/10 font-medium",
-        "nav-cta": "bg-transparent border text-tertiary font-medium  border-tertiary",
+        "nav-cta": "bg-transparent border text-tertiary font-medium border-tertiary hover:bg-tertiary hover:text-tertiary-foreground hover:border-tertiary",
         white: "bg-white text-primary hover:bg-white/90 font-semibold",
         "white-outline": "border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary font-medium",
       },
