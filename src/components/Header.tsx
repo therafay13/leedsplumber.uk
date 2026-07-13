@@ -123,19 +123,20 @@ const Header = ({
               onClick={handlePagesClick}
               aria-label="Open more pages"
               aria-expanded={isPagesDropdownOpen}
-              className={`group flex items-center justify-center w-8 h-8 rounded-full transition-colors ${isPagesDropdownOpen ? 'bg-white/15' : ''} ${isDark ? 'text-white hover:bg-white/10' : 'text-foreground/80 hover:bg-primary/5'}`}
+              className={`group flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary focus-visible:ring-offset-2 ${isPagesDropdownOpen ? 'bg-tertiary text-white shadow-[0_8px_24px_rgba(232,29,35,0.28)]' : ''} ${isDark ? 'text-white hover:bg-tertiary/80' : 'text-foreground/80 hover:bg-tertiary hover:text-white'}`}
             >
               <MoreHorizontal className="h-5 w-5" />
             </button>
             <div className={`absolute right-0 top-full mt-3 w-56 transition-all duration-200 ${isPagesDropdownOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-2'}`}>
-              <div className="rounded-2xl overflow-hidden border border-white/8 bg-primary shadow-2xl">
-                <div className="p-2 flex flex-col">
+              <div className="overflow-hidden rounded-2xl border border-white/25 bg-primary/60 shadow-[0_20px_55px_rgba(7,11,38,0.38)] ring-1 ring-tertiary/20 backdrop-blur-2xl supports-[backdrop-filter]:bg-primary/45">
+                <div className="h-0.5 bg-tertiary/90" aria-hidden="true" />
+                <div className="flex flex-col p-2">
                   {overflowLinks.map(link => (
                     <Link
                       key={link.name}
                       to={link.href}
                       onClick={closeDropdown}
-                      className="px-4 py-3 rounded-xl text-white/80 hover:text-white hover:bg-white/8 transition-all duration-150 font-medium text-sm"
+                      className="rounded-xl px-4 py-3 text-sm font-medium text-white/80 transition-all duration-200 hover:bg-tertiary/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary"
                     >
                       {link.name}
                     </Link>

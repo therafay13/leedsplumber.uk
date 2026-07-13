@@ -197,14 +197,14 @@ const Testimonials = () => {
 
       <FadeIn delay={300}>
         <div className="relative mb-4">
-          <div className="flex w-max gap-4 animate-marquee-left" style={{ animationDuration: "32s" }}>
+          <div className="flex w-max gap-4 animate-marquee-left" style={{ animationDuration: "40s" }}>
             {duplicatedReviews.map((review, index) => (
               <FeedbackCard key={`${review.author}-${index}`} {...review} />
             ))}
           </div>
         </div>
         <div className="relative hidden md:block">
-          <div className="flex w-max gap-4 animate-marquee-right" style={{ animationDuration: "32s" }}>
+          <div className="flex w-max gap-4 animate-marquee-right" style={{ animationDuration: "40s" }}>
             {duplicatedReviews.map((review, index) => (
               <FeedbackCard key={`reverse-${review.author}-${index}`} {...review} />
             ))}
