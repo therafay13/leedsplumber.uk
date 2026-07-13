@@ -1,4 +1,3 @@
-import contact from "@/assets/contact-1.png";
 import FadeIn from "@/components/FadeIn";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -158,7 +157,7 @@ const Contact = () => {
           <FadeIn>
             <div className="mx-auto grid gap-12 lg:grid-cols-2">
               <div className="overflow-hidden rounded-2xl">
-                <img src={contact} alt="Plumbing service work in a home" className="min-h-[400px] h-full w-full object-cover" />
+                <img src="/images/plumbing/support-finished-bathroom.webp" alt="Finished bathroom plumbing with a clean basin and tap" className="min-h-[400px] h-full w-full object-cover" />
               </div>
 
               <div className="rounded-2xl bg-card p-8">

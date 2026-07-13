@@ -1,4 +1,3 @@
-import plumberTeam from "@/assets/hero-2.png";
 import FadeIn from "@/components/FadeIn";
 import { Link } from "react-router-dom";
 
@@ -29,8 +28,8 @@ const Experience = () => {
             <div className="relative">
               <div className="overflow-hidden rounded-3xl">
                 <img
-                  src={plumberTeam}
-                  alt="Service team working in a residential property"
+                  src="/images/plumbing/support-clean-handover.webp"
+                  alt="Plumber checking a repaired kitchen fitting before leaving"
                   className="h-auto max-h-[500px] w-full object-cover"
                 />
               </div>

@@ -1,5 +1,3 @@
-import heroPlumber from "@/assets/hero-5.png";
-import teamPlumber from "@/assets/hero-51.png";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone } from "lucide-react";
@@ -77,15 +75,15 @@ const Solutions = () => {
             <div className="relative lg:h-full">
               <div className="aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-auto lg:h-full">
                 <img
-                  src={heroPlumber}
-                  alt="Plumbing service work in a home"
+                  src="/images/plumbing/support-finished-bathroom.webp"
+                  alt="Finished bathroom plumbing with a clean basin and tap"
                   className="h-auto w-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-12 -left-12 hidden h-[240px] w-[240px] overflow-hidden rounded-xl text-white lg:block">
                 <img
-                  src={teamPlumber}
-                  alt="Close view of service work"
+                  src="/images/plumbing/service-saniflo-water-systems.webp"
+                  alt="Plumber inspecting a compact water-system installation"
                   className="h-full w-full object-cover"
                 />
               </div>

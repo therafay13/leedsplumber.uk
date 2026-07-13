@@ -1,11 +1,3 @@
-import service1 from "@/assets/service-1.png";
-import service2 from "@/assets/service-2.png";
-import service3 from "@/assets/service-3.png";
-import service4 from "@/assets/service-4.png";
-import service5 from "@/assets/service-5.png";
-import service6 from "@/assets/service-6.png";
-import service7 from "@/assets/service-7.png";
-
 export interface Service {
   number: string;
   image: string;
@@ -21,7 +13,7 @@ export interface Service {
 export const services: Service[] = [
   {
     number: "01",
-    image: service1,
+    image: "/images/plumbing/anchor-leak-trace.webp",
     title: "Emergency Plumbing",
     slug: "emergency-plumbing",
     description:
@@ -49,7 +41,7 @@ export const services: Service[] = [
   },
   {
     number: "02",
-    image: service2,
+    image: "/images/plumbing/hero-pipe-connection.webp",
     title: "General Plumbing Repairs",
     slug: "plumbing-repairs",
     description:
@@ -77,7 +69,7 @@ export const services: Service[] = [
   },
   {
     number: "03",
-    image: service3,
+    image: "/images/plumbing/service-leak-tracing.webp",
     title: "Leaks, Burst Pipes and Overflows",
     slug: "leaks-burst-pipes",
     description:
@@ -105,7 +97,7 @@ export const services: Service[] = [
   },
   {
     number: "04",
-    image: service4,
+    image: "/images/plumbing/hero-drain-inspection.webp",
     title: "Blocked Drains and Jetting",
     slug: "drainage-jetting",
     description:
@@ -133,7 +125,7 @@ export const services: Service[] = [
   },
   {
     number: "05",
-    image: service5,
+    image: "/images/plumbing/hero-basin-fitting.webp",
     title: "Bathrooms, Taps and Toilets",
     slug: "bathrooms-taps-toilets",
     description:
@@ -161,7 +153,7 @@ export const services: Service[] = [
   },
   {
     number: "06",
-    image: service6,
+    image: "/images/plumbing/hero-radiator-check.webp",
     title: "Radiators, Showers and Pumps",
     slug: "radiators-showers-pumps",
     description:
@@ -189,7 +181,7 @@ export const services: Service[] = [
   },
   {
     number: "07",
-    image: service7,
+    image: "/images/plumbing/service-saniflo-water-systems.webp",
     title: "Saniflo and Water Systems",
     slug: "saniflo-water-systems",
     description:

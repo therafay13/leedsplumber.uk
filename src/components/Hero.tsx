@@ -1,9 +1,3 @@
-import heroGrid1 from "@/assets/hero-grid-1.jpg";
-import heroGrid2 from "@/assets/hero-grid-2.jpg";
-import heroGrid3 from "@/assets/hero-grid-3.jpg";
-import heroGrid4 from "@/assets/hero-grid-4.jpg";
-import heroGrid5 from "@/assets/hero-grid-5.jpg";
-import heroGrid6 from "@/assets/hero-grid-6.jpg";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -33,14 +27,14 @@ const FlipButton = ({
 
 const Hero = () => {
   const leftColumnImages = [
-    { src: heroGrid1, alt: "Hands-on service work in a home", className: "rounded-2xl" },
-    { src: heroGrid3, alt: "Service team working carefully on-site", className: "rounded-full" },
-    { src: heroGrid5, alt: "Close detail from a completed service job", className: "rounded-2xl" },
+    { src: "/images/plumbing/anchor-leak-trace.webp", alt: "Plumber tracing a leak beneath a kitchen sink", className: "rounded-2xl" },
+    { src: "/images/plumbing/hero-radiator-check.webp", alt: "Plumber checking a radiator connection", className: "rounded-full" },
+    { src: "/images/plumbing/hero-drain-inspection.webp", alt: "Plumber inspecting an exterior drain", className: "rounded-2xl" },
   ];
   const rightColumnImages = [
-    { src: heroGrid2, alt: "Home service detail", className: "rounded-full" },
-    { src: heroGrid4, alt: "Careful work in a residential setting", className: "rounded-2xl" },
-    { src: heroGrid6, alt: "Practical work carried out on-site", className: "rounded-full" },
+    { src: "/images/plumbing/hero-pipe-connection.webp", alt: "Plumber making a pipe connection", className: "rounded-full" },
+    { src: "/images/plumbing/hero-basin-fitting.webp", alt: "Plumber fitting a bathroom tap", className: "rounded-2xl" },
+    { src: "/images/plumbing/hero-homeowner-consultation.webp", alt: "Plumber explaining the next step to a homeowner", className: "rounded-full" },
   ];
   const allImages = [...leftColumnImages, ...rightColumnImages];
   const mobileStripImages = [...allImages, ...allImages, ...allImages];

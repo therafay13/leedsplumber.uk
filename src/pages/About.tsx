@@ -1,6 +1,3 @@
-import aboutHero from "@/assets/about-hero-1.png";
-import missionImage from "@/assets/mission-1.png";
-import visionImage from "@/assets/mission-2.png";
 import CTA from "@/components/CTA";
 import FadeIn from "@/components/FadeIn";
 import Footer from "@/components/Footer";
@@ -78,7 +75,7 @@ const About = () => {
 
             <FadeIn delay={200}>
               <div className="overflow-hidden rounded-3xl">
-                <img src={aboutHero} alt="Leedsplumber.uk service team at work" className="h-[400px] w-full object-cover lg:h-[500px]" />
+                <img src="/images/plumbing/hero-homeowner-consultation.webp" alt="Plumber explaining a plumbing assessment to a homeowner" className="h-[400px] w-full object-cover lg:h-[500px]" />
               </div>
             </FadeIn>
 
@@ -152,8 +149,8 @@ const About = () => {
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
               <FadeIn>
                 <div className="grid grid-cols-2 gap-4">
-                  <img src={missionImage} alt="Home service work" className="mt-10 h-72 w-full rounded-2xl object-cover" />
-                  <img src={visionImage} alt="Careful work in a property" className="h-72 w-full rounded-2xl object-cover" />
+                  <img src="/images/plumbing/support-finished-bathroom.webp" alt="Finished bathroom plumbing with a clean basin and tap" className="mt-10 h-72 w-full rounded-2xl object-cover" />
+                  <img src="/images/plumbing/support-clean-handover.webp" alt="Plumber checking a completed repair" className="h-72 w-full rounded-2xl object-cover" />
                 </div>
               </FadeIn>
               <FadeIn delay={100}>

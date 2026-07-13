@@ -1,5 +1,3 @@
-import plumberTeam from "@/assets/hero-4.png";
-import plumberTeam1 from "@/assets/hero-41.png";
 import FadeIn from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Phone } from "lucide-react";
@@ -43,15 +41,15 @@ const About = () => {
             <div className="relative">
               <div className="overflow-hidden rounded-3xl">
                 <img
-                  src={plumberTeam}
-                  alt="Leedsplumber.uk service team at work"
+                  src="/images/plumbing/hero-homeowner-consultation.webp"
+                  alt="Plumber explaining a plumbing assessment to a homeowner"
                   className="h-auto w-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-12 -right-12 hidden h-[240px] w-[240px] overflow-hidden rounded-xl text-white lg:block">
                 <img
-                  src={plumberTeam1}
-                  alt="Close view of hands-on plumbing work"
+                  src="/images/plumbing/support-clean-handover.webp"
+                  alt="Plumber checking a completed repair"
                   className="h-full w-full object-cover"
                 />
               </div>

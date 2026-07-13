@@ -1,4 +1,3 @@
-import heroPlumber from "@/assets/hero-plumber.jpg";
 import FadeIn from "@/components/FadeIn";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
@@ -39,8 +38,8 @@ const CTA = () => {
             <div className="lg:col-span-2 rounded-3xl overflow-hidden relative min-h-[320px]">
               {/* Background Image */}
               <img
-                src={heroPlumber}
-                  alt="Plumbing service work in a home"
+                src="/images/plumbing/hero-homeowner-consultation.webp"
+                  alt="Plumber discussing the next step with a homeowner"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
               {/* Gradient Overlay */}
