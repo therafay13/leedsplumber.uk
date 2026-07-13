@@ -9,7 +9,7 @@ const reviews = [
     sourceUrl: "https://www.google.com/maps/search/?api=1&query=Leeds+Plumber+UK%2C+51+Whinmoor+Crescent%2C+Leeds%2C+LS14+1NJ",
   },
   {
-    quote: "John responded quickly to my emergency call.",
+    quote: "Great service. John responded quickly.",
     author: "Kay Watson",
     source: "Google review",
     sourceUrl: "https://www.google.com/maps/search/?api=1&query=Leeds+Plumber+UK%2C+51+Whinmoor+Crescent%2C+Leeds%2C+LS14+1NJ",
@@ -21,8 +21,14 @@ const reviews = [
     sourceUrl: "https://www.google.com/maps/search/?api=1&query=Leeds+Plumber+UK%2C+51+Whinmoor+Crescent%2C+Leeds%2C+LS14+1NJ",
   },
   {
-    quote: "John is helpful, courteous and polite.",
+    quote: "Helpful, courteous and polite.",
     author: "soul12uk",
+    source: "Google review",
+    sourceUrl: "https://www.google.com/maps/search/?api=1&query=Leeds+Plumber+UK%2C+51+Whinmoor+Crescent%2C+Leeds%2C+LS14+1NJ",
+  },
+  {
+    quote: "Very impressed. Would recommend.",
+    author: "Joanna Hargreaves",
     source: "Google review",
     sourceUrl: "https://www.google.com/maps/search/?api=1&query=Leeds+Plumber+UK%2C+51+Whinmoor+Crescent%2C+Leeds%2C+LS14+1NJ",
   },
