@@ -67,10 +67,7 @@ const Hero = () => {
             <h1 className="text-white font-bold mb-6 text-5xl md:text-6xl lg:text-7xl leading-[1.1] max-w-[800px] text-left xl:text-7xl">
               Emergency Plumbing
               <br />
-              <span className="relative inline-block text-white">
-                Across Leeds
-                <span aria-hidden="true" className="absolute left-0 right-[42%] -bottom-1 h-1 rounded-full bg-tertiary" />
-              </span>
+              <span className="text-white">Across Leeds</span>
             </h1>
           </div>
 

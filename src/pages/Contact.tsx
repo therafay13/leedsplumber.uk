@@ -14,7 +14,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/data/services";
 import { supabase } from "@/integrations/supabase/client";
-import { Clock, MapPin, Phone, PoundSterling, Wrench } from "lucide-react";
+import { Clock, MapPin, Phone, Wrench } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
@@ -80,26 +80,25 @@ const Contact = () => {
 
     try {
       if (quoteData) {
-        // Submit quote request to database
-        const { error } = await supabase.from("quote_requests").insert({
+        const quoteNotes = [
+          `Quote request: ${quoteData.serviceTitle}`,
+          `Response type: ${quoteData.urgency}`,
+          formData.notes,
+        ]
+          .filter(Boolean)
+          .join("\n");
+
+        const { error } = await supabase.from("contacts").insert({
           full_name: formData.fullName,
           phone: formData.phone,
           email: formData.email || null,
-          service_slug: quoteData.serviceSlug,
-          service_title: quoteData.serviceTitle,
-          complexity_label: quoteData.complexityLabel,
-          complexity_multiplier: quoteData.complexityMultiplier,
-          estimated_hours: quoteData.estimatedHours,
-          urgency: quoteData.urgency,
-          base_price: quoteData.basePrice,
-          estimated_min: quoteData.estimatedMin,
-          estimated_max: quoteData.estimatedMax,
-          notes: formData.notes || null,
+          service: quoteData.serviceTitle,
+          notes: quoteNotes || null,
         });
 
         if (error) throw error;
 
-        toast.success("Quote request submitted successfully! We'll contact you soon.");
+        toast.success("Quote request sent. We will contact you soon.");
       } else if (planData) {
         // Submit plan inquiry to database
         const { error } = await supabase.from("quote_requests").insert({
@@ -166,11 +165,11 @@ const Contact = () => {
               <span className="text-primary">Contact</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
-              {quoteData ? "Request a Free Quote" : planData ? "Plan Inquiry" : "Contact Leeds Plumber UK"}
+              {quoteData ? "Request a Plumbing Quote" : planData ? "Plan Inquiry" : "Contact Leeds Plumber UK"}
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               {quoteData
-                ? "Complete your information below and we'll send you an official quote based on your estimate."
+                ? "Tell us what you need and we will arrange a clear quote. There is no call-out charge."
                 : planData
                   ? "Fill in your details and we'll contact you about the selected plan."
                   : "Call 0113 418 2075 for emergency help or request a free quote for planned plumbing work."}
@@ -189,7 +188,7 @@ const Contact = () => {
                   {quoteData ? "Your Quote Summary" : "Selected Plan"}
                 </h3>
                 {quoteData ? (
-                  <div className="grid md:grid-cols-4 gap-4">
+                  <div className="grid gap-4 md:grid-cols-2">
                     <div className="flex items-center gap-3">
                       <Wrench className="w-5 h-5 text-accent" />
                       <div>
@@ -200,22 +199,15 @@ const Contact = () => {
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-accent" />
                       <div>
-                        <p className="text-sm text-primary-foreground/70">Hours</p>
-                        <p className="font-medium">{quoteData.estimatedHours} hrs</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-accent" />
-                      <div>
                         <p className="text-sm text-primary-foreground/70">Urgency</p>
                         <p className="font-medium capitalize">{quoteData.urgency}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <PoundSterling className="w-5 h-5 text-accent" />
+                      <Wrench className="w-5 h-5 text-accent" />
                       <div>
-                        <p className="text-sm text-primary-foreground/70">Estimate</p>
-                        <p className="font-bold text-lg">£{quoteData.estimatedMin} - £{quoteData.estimatedMax}</p>
+                        <p className="text-sm text-primary-foreground/70">Quote status</p>
+                        <p className="font-medium">Confirmed after assessment</p>
                       </div>
                     </div>
                   </div>
