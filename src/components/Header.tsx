@@ -173,10 +173,8 @@ const Header = ({
         <nav className="flex flex-col gap-4">
           {navLinks.map(link => link.isRoute ? <Link key={link.name} to={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-foreground/80'} hover:text-foreground transition-colors duration-300 text-sm font-medium py-2`}>
             {link.name}
-            {link.hasDropdown && <ChevronDown className="h-4 w-4" />}
           </Link> : <a key={link.name} href={link.href} className={`flex items-center gap-1 ${isDark ? 'text-white' : 'text-foreground/80'} hover:text-foreground transition-colors duration-300 text-sm font-medium py-2`}>
             {link.name}
-            {link.hasDropdown && <ChevronDown className="h-4 w-4" />}
           </a>)}
           <div className="border-t border-white/10 my-1" />
           {overflowLinks.map(link => (
