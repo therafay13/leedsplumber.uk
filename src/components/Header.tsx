@@ -114,7 +114,7 @@ const Header = ({
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map(link => <FlipLink key={link.name} hasDropdown={link.hasDropdown} href={link.href} isRoute={link.isRoute} onClick={link.hasDropdown ? handlePagesClick : undefined} isActive={link.hasDropdown && isPagesDropdownOpen} isDark={isDark}>
+          {navLinks.map(link => <FlipLink key={link.name} href={link.href} isRoute={link.isRoute} isDark={isDark}>
             {link.name}
           </FlipLink>)}
           {/* Overflow nav - secondary pages */}
