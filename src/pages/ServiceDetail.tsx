@@ -208,7 +208,7 @@ const ServiceDetail = () => {
               </section>
 
               {/* Service Benefits Section */}
-              <section className="pt-16">
+              <section className="pb-20 pt-16 lg:pb-32">
                 <div className="container-custom">
                   <div className="grid gap-16 items-center">
                     {/* Left - Benefits Content */}
