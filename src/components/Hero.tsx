@@ -40,9 +40,9 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-primary">
-      <div className="container-custom section-padding relative z-10">
-        <div className="relative grid items-center gap-12 lg:min-h-[calc(100vh-8rem)] lg:grid-cols-2">
-          <div className="relative z-10 max-w-7xl pb-8 lg:min-w-[700px] lg:pb-16">
+      <div className="container-custom section-padding relative z-10 md:max-lg:pt-10">
+        <div className="relative grid items-center gap-12 md:max-lg:gap-5 lg:min-h-[calc(100vh-8rem)] lg:grid-cols-2">
+          <div className="relative z-10 max-w-7xl pb-8 md:max-lg:pb-3 lg:min-w-[700px] lg:pb-16">
             <div className="animate-fade-up">
               <h1 className="mb-6 max-w-[800px] text-left text-5xl font-bold leading-[1.1] text-white md:text-6xl lg:text-7xl xl:text-7xl">
                 <span className="text-tertiary">Emergency</span> Plumbing
@@ -101,7 +101,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="-mx-4 overflow-hidden pb-8 pt-2 md:-mx-8 lg:hidden">
+          <div className="-mx-4 overflow-hidden pb-8 pt-2 md:-mx-8 md:max-lg:pb-5 md:max-lg:pt-0 lg:hidden">
             <div className="flex w-max gap-3 animate-marquee-left">
               {mobileStripImages.map((image, index) => (
                 <div key={index} className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full">
