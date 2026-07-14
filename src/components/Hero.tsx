@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FlipButton = ({
@@ -46,7 +45,7 @@ const Hero = () => {
           <div className="relative z-10 max-w-7xl pb-8 lg:min-w-[700px] lg:pb-16">
             <div className="animate-fade-up">
               <h1 className="mb-6 max-w-[800px] text-left text-5xl font-bold leading-[1.1] text-white md:text-6xl lg:text-7xl xl:text-7xl">
-                Emergency Plumbing
+                <span className="text-tertiary">Emergency</span> Plumbing
                 <br />
                 <span className="text-white">Across Leeds</span>
               </h1>
@@ -60,12 +59,11 @@ const Hero = () => {
               <Link to="/quote">
                 <FlipButton>Get A Free Quote</FlipButton>
               </Link>
-              <a href="tel:+441134182075">
+              <Link to="/contact">
                 <FlipButton variant="dark">
-                  <Phone />
-                  Call 0113 418 2075
+                  Contact Us
                 </FlipButton>
-              </a>
+              </Link>
             </div>
 
             <div className="flex items-center gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>

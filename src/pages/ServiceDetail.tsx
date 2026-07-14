@@ -138,13 +138,13 @@ const ServiceDetail = () => {
 
           {/* Hero Image */}
           <FadeIn delay={200}>
-            <div className="rounded-xl overflow-hidden">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-[400px] md:h-[500px] object-cover"
-              />
-            </div>
+              <div className="overflow-hidden rounded-xl">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="block h-[400px] w-full object-cover md:h-[500px]"
+                />
+              </div>
           </FadeIn>
         </div>
       </section>
@@ -237,11 +237,11 @@ const ServiceDetail = () => {
 
                     {/* Right - Image */}
                     <FadeIn delay={200}>
-                      <div className="rounded-xl overflow-hidden">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
                         <img
                           src={service.image}
                           alt={service.title}
-                          className="w-full h-[400px] object-cover"
+                          className="absolute inset-0 block h-full w-full object-cover"
                         />
                       </div>
                     </FadeIn>
