@@ -39,11 +39,11 @@ const Services = () => {
               <FadeIn key={service.slug} delay={index * 100}>
                 <Link to={`/services/${service.slug}`} className="block h-full">
                   <article className="group h-full cursor-pointer rounded-xl bg-card px-7 py-7 transition-all duration-300 hover:bg-primary">
-                    <div className="relative mb-6 min-h-[300px] overflow-hidden rounded-md md:max-lg:aspect-[3/2] md:max-lg:min-h-0">
+                    <div className="relative mb-6 min-h-[300px] overflow-hidden rounded-md max-md:aspect-[3/2] max-md:min-h-0 md:max-lg:aspect-[3/2] md:max-lg:min-h-0">
                       <img
                         src={service.image}
                         alt={service.title}
-                        className="h-full w-full rounded-md object-cover transition-transform duration-500 group-hover:scale-105 md:max-lg:absolute md:max-lg:inset-0 md:max-lg:block"
+                        className="h-full w-full rounded-md object-cover transition-transform duration-500 group-hover:scale-105 max-md:absolute max-md:inset-0 max-md:block md:max-lg:absolute md:max-lg:inset-0 md:max-lg:block"
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between gap-4">
