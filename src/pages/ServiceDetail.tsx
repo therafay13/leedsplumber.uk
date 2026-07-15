@@ -27,7 +27,7 @@ const FlipButton = ({
 }) => {
   const bgClass = variant === "primary" ? "bg-primary" : "bg-secondary";
   return (
-    <button className={`group relative px-8 py-4 ${bgClass} rounded-full overflow-hidden`}>
+    <button className={`group relative px-8 py-4 ${bgClass} rounded-full overflow-hidden md:max-lg:min-w-[160px] md:max-lg:flex-shrink-0 md:max-lg:whitespace-nowrap`}>
       <span className="relative block overflow-hidden h-6">
         <span className="block transition-transform duration-300 group-hover:-translate-y-full text-white font-semibold">
           {children}
